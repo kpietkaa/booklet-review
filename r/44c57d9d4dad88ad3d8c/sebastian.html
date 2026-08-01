@@ -797,7 +797,7 @@ k20  +  bonus  &lt;  ST      →   KARA</pre>
 <script>
 (function () {
 "use strict";
-var DOC = {"key": "sebastian", "name": "Sebastian", "prefix": "SE", "file": "ksiazeczka-sebastian.html", "built": "2026-08-01 22:23"};
+var DOC = {"key": "sebastian", "name": "Sebastian", "prefix": "SE", "file": "ksiazeczka-sebastian.html", "built": "2026-08-01 22:34"};
 var KEY = 'owp-review-' + DOC.key;
 var notes = [], pend = null, lastSel = null, editing = null, persists = true;
 
@@ -889,7 +889,20 @@ function blockText(el) {
     }
     return out.join('\n');
   }
+  var kids = [].filter.call(el.children, function (c) {
+    return /^(P|UL|OL|TABLE|DIV|H1|H2|H3|H4|PRE|BLOCKQUOTE)$/.test(c.tagName);
+  });
+  if (kids.length) {                  // a callout's title is not part of its first sentence
+    return kids.map(blockText).filter(function (x) { return x; }).join('\n');
+  }
   return el.textContent.replace(/\s+/g, ' ').trim();
+}
+// a quote that starts mid-word cannot be found in the source note, and a finger
+// on glass lands mid-word constantly. grow the ends out to the nearest space
+function snapWords(t, s, e) {
+  while (s > 0 && !/\s/.test(t[s - 1])) s--;
+  while (e < t.length && !/\s/.test(t[e])) e++;
+  return { start: s, end: e };
 }
 function srcOf(blk) {
   var p = blk.closest('.page');
@@ -920,10 +933,72 @@ function rowText(tr) {
     return c.textContent.replace(/\s+/g, ' ').trim();
   }).join(' | ') + ' |';
 }
+function pageOf(node) {
+  var el = node.nodeType === 1 ? node : node.parentElement;
+  return el && el.closest('.page');
+}
+// every top-level block the selection touches, in reading order. a drag that runs
+// off the end of a page stops there — one comment belongs to one page
+function blocksIn(r) {
+  var page = pageOf(r.startContainer) || pageOf(r.commonAncestorContainer);
+  if (!page) return [];
+  var out = [], kids = page.children, i;
+  for (i = 0; i < kids.length; i++) {
+    if (kids[i].id && r.intersectsNode(kids[i])) out.push(kids[i]);
+  }
+  return out;
+}
+function kindsOf(blocks) {
+  var seen = [];
+  blocks.forEach(function (el) {
+    var k = el.getAttribute('data-kind') || 'blok';
+    if (seen.indexOf(k) < 0) seen.push(k);
+  });
+  return seen.join(', ');
+}
+function blocksWord(n) {
+  if (n === 1) return 'blok';
+  var d = n % 10, s = n % 100;
+  return (d >= 2 && d <= 4 && !(s >= 12 && s <= 14)) ? 'bloki' : 'bloków';
+}
+
+// one comment over several blocks: each block keeps its own anchor, and the note
+// keeps the list. offsetsOf already clamps a block the selection only passes
+// through to its full length, so the middle of a drag needs no special case
+function spanSelection(blocks, r) {
+  var parts = [];
+  blocks.forEach(function (el) {
+    var o = snapWords(el.textContent, offsetsOf(el, r).start, offsetsOf(el, r).end);
+    var q = el.textContent.slice(o.start, o.end);
+    if (!q.trim()) return;
+    parts.push({ blk: el.id, start: o.start, end: o.end, quote: q,
+                 disp: q.trim() === el.textContent.trim() ? blockText(el)
+                                                          : q.replace(/\s+/g, ' ').trim() });
+  });
+  if (!parts.length) return null;
+  if (parts.length === 1) return null;         // the drag only really hit one block
+  var first = document.getElementById(parts[0].blk);
+  var last = parts[parts.length - 1].blk;
+  var k = idxOf(first);
+  return { blk: parts[0].blk, blkEnd: last, span: parts,
+           src: srcOf(first), sec: first.getAttribute('data-h') || '',
+           kind: kindsOf(blocks), page: k.page, idx: k.idx,
+           whole: false, start: parts[0].start, end: parts[0].end,
+           quote: parts[0].quote,
+           disp: parts.map(function (p) { return p.disp; }).join('\n\n'),
+           ctx: '' };
+}
+
 function captureSelection() {
   var sel = window.getSelection();
   if (!sel || sel.isCollapsed || !sel.rangeCount) return null;
-  var r = sel.getRangeAt(0), blk = blockOf(r.startContainer);
+  var r = sel.getRangeAt(0);
+  var touched = blocksIn(r);
+  if (touched.length > 1) {
+    var many = spanSelection(touched, r);
+    if (many) return many;
+  }
+  var blk = blockOf(r.startContainer) || touched[0];
   if (!blk) return null;
   var o = offsetsOf(blk, r), disp = null;
 
@@ -939,6 +1014,7 @@ function captureSelection() {
       }
     }
   }
+  if (!disp) o = snapWords(blk.textContent, o.start, o.end);
   var quote = blk.textContent.slice(o.start, o.end);
   if (!quote.trim()) return null;
   var k = idxOf(blk);
@@ -969,6 +1045,24 @@ function render() {
 
   notes.forEach(function (n) {
     if (!n.blk) return;
+    if (n.span) {                       // one comment, several blocks: anchor each
+      var lost = false;
+      n.span.forEach(function (q) {
+        var e2 = document.getElementById(q.blk);
+        if (!e2) { lost = true; return; }
+        e2.setAttribute('data-noted', '1');
+        var tx = e2.textContent;
+        if (tx.slice(q.start, q.end) !== q.quote) {
+          var was = tx.indexOf(q.quote);
+          if (was < 0) { lost = true; return; }
+          q.start = was; q.end = was + q.quote.length;
+        }
+        var rq = rangeFrom(e2, q.start, q.end);
+        if (rq) wrapRange(rq, n.nid);
+      });
+      n.orphan = lost;
+      return;
+    }
     var el = document.getElementById(n.blk);
     if (!el) { n.orphan = true; return; }
     n.orphan = false;
@@ -995,7 +1089,8 @@ function plural(n) {
 function openSheet(anchor, note) {
   editing = note || null; pend = anchor || null;
   var a = note || anchor;
-  document.getElementById('sid').textContent = a.blk || (DOC.prefix + '-OGÓLNE');
+  document.getElementById('sid').textContent =
+    a.blkEnd ? (a.blk + ' … ' + a.blkEnd) : (a.blk || DOC.prefix + '-OGÓLNE');
   document.getElementById('ssrc').textContent =
     (a.src || '(cała książeczka)') + (a.sec ? ' › ' + a.sec : '');
   var q = document.getElementById('sq');
@@ -1033,11 +1128,14 @@ function qb(t) {
 }
 function record(n) {
   var L = ['---'];
-  L.push('id: ' + (n.blk || DOC.prefix + '-OGÓLNE'));
+  L.push('id: ' + (n.blkEnd ? n.blk + ' … ' + n.blkEnd : (n.blk || DOC.prefix + '-OGÓLNE')));
   L.push('plik: ' + (n.src || '(cała książeczka)'));
   if (n.sec) L.push('sekcja: ' + n.sec);
-  L.push('zakres: ' + (n.blk ? (n.whole ? 'cały blok' : 'fragment') + ' — ' + n.kind
-                             : 'uwaga ogólna'));
+  L.push('zakres: ' + (!n.blk ? 'uwaga ogólna'
+    : n.span ? 'zaznaczenie przez ' + n.span.length + ' ' + blocksWord(n.span.length) +
+               ' — ' + n.kind
+    : (n.whole ? 'cały blok' : 'fragment') + ' — ' + n.kind));
+  if (n.span) L.push('bloki: ' + n.span.map(function (q) { return q.blk; }).join(', '));
   if (n.orphan) L.push('uwaga-techniczna: kotwica nieaktualna — blok zmienił się po komentarzu');
   var shown = n.disp || n.quote;
   if (shown) { L.push('tekst:'); L.push(qb(shown)); }
@@ -1136,7 +1234,8 @@ function showList() {
   var h = '<h3>Uwagi (' + notes.length + ')</h3>';
   if (!sorted.length) h += '<p>Jeszcze nic tu nie ma. Zaznacz zdanie i naciśnij ＋ Uwaga.</p>';
   sorted.forEach(function (n) {
-    h += '<div class="item"><div class="meta">' + esc(n.blk || DOC.prefix + '-OGÓLNE') +
+    h += '<div class="item"><div class="meta">' +
+         esc(n.blkEnd ? n.blk + ' … ' + n.blkEnd : (n.blk || DOC.prefix + '-OGÓLNE')) +
          ' · ' + esc(n.src || '(cała książeczka)') +
          (n.orphan ? ' <span class="orph">· kotwica nieaktualna</span>' : '') + '</div>' +
          (n.disp || n.quote ? '<div class="q">„' + esc((n.disp || n.quote).slice(0, 160)) +
