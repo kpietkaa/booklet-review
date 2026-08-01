@@ -1,0 +1,1257 @@
+<!doctype html>
+<html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<title>Ostatnia Wyprawa Piotrka — Piotrek (uwagi)</title>
+<style>:root { --accent: #2f5fa8; }
+@page { size: A5; margin: 11mm 10mm 13mm 10mm; }
+@page :first { margin: 0; }
+* { box-sizing: border-box; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "Baskerville","Palatino Linotype",Georgia,serif;
+       font-size: 11.2pt; line-height: 1.42; color: #16120d; margin: 0; }
+.page { page-break-after: always; break-after: page; }
+.page:last-child { page-break-after: auto; }
+
+h1 { font-family: Luminari, Papyrus, Georgia, serif; font-size: 21pt;
+     letter-spacing: .5px; margin: 0 0 .35em; color: var(--accent); line-height: 1.15; }
+h2 { font-family: Herculanum, Papyrus, Georgia, serif; font-size: 14.5pt;
+     margin: 1.1em 0 .35em; border-bottom: 2px solid var(--accent);
+     padding-bottom: 2px; letter-spacing: .3px; }
+h3 { font-family: Herculanum, Papyrus, Georgia, serif; font-size: 12.4pt;
+     margin: .9em 0 .3em; color: var(--accent); }
+h4 { font-size: 11.4pt; margin: .8em 0 .25em; }
+p { margin: .42em 0; }
+strong { font-weight: 700; }
+hr { border: 0; border-top: 1px solid #c9bda6; margin: .9em 0; }
+code { font-family: "SF Mono",Menlo,monospace; font-size: .88em;
+       background: #efe9dc; padding: 0 3px; border-radius: 2px; }
+pre { font-family: "SF Mono",Menlo,monospace; font-size: 9.5pt; background: #f2ece0;
+      border-left: 3px solid var(--accent); padding: 7px 9px; margin: .6em 0;
+      white-space: pre-wrap; }
+
+ul, ol { margin: .4em 0 .5em; padding-left: 1.25em; }
+li { margin: .16em 0; }
+ul.checks { list-style: none; padding-left: .1em; }
+ul.checks li { margin: .3em 0; }
+.box { display: inline-block; width: 11px; height: 11px; border: 1.6px solid #16120d;
+       border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+table { border-collapse: collapse; width: 100%; margin: .55em 0; font-size: 9.9pt; }
+th, td { border: 1px solid #c2b69e; padding: 3.2px 5px; text-align: left;
+         vertical-align: top; }
+th { background: var(--accent); color: #fff; font-weight: 700; font-size: 9.6pt; }
+tbody tr:nth-child(even) td { background: #f6f2e9; }
+
+/* roll vs no-roll, so the GM sees it without reading */
+table tbody tr td.roll   { background: #fbf3e0; border-left: 3px solid #b8862b; }
+table tbody tr td.noroll { background: #eceee9; border-left: 3px solid #8a8a7a;
+                           color: #46463a; font-style: italic; }
+
+.callout { margin: .6em 0; padding: 7px 10px; border-left: 4px solid #8a7a5c;
+           background: #f6f2e9; border-radius: 0 3px 3px 0; }
+.callout p:first-child { margin-top: 0; }
+.callout p:last-child { margin-bottom: 0; }
+.callout .ct { font-weight: 700; font-size: 10.2pt; letter-spacing: .3px;
+               margin-bottom: .25em; font-family: Herculanum, Georgia, serif; }
+.callout.quote { border-left-color: var(--accent); background: #f7f4ec;
+                 font-size: 11.4pt; }
+.imp    { border-left-color: #b8862b; background: #fbf3e0; }
+.warn   { border-left-color: #a8331f; background: #fbeeea; }
+.danger { border-left-color: #8c1d10; background: #f9e6e2; }
+.tip    { border-left-color: #2e6b3f; background: #eef5ee; }
+.info   { border-left-color: #35607f; background: #eaf1f6; }
+
+/* cover */
+.cover { height: 100vh; display: flex; flex-direction: column; justify-content: center;
+         align-items: center; text-align: center; padding: 18mm 12mm;
+         background: var(--accent); color: #fff; }
+.cover .sup { font-size: 10.5pt; letter-spacing: 3px; text-transform: uppercase;
+              opacity: .85; }
+.cover h1 { font-size: 30pt; color: #fff; margin: .25em 0 .1em; }
+.cover .kl { font-family: Herculanum, Georgia, serif; font-size: 15pt; margin-bottom: 1.2em; }
+.cover .rule { width: 46%; border-top: 2px solid rgba(255,255,255,.5); margin: 1em 0; }
+.cover .meta { font-size: 10.5pt; line-height: 1.7; }
+.cover .proph { margin-top: 1.6em; font-family: Herculanum, Georgia, serif;
+                font-size: 12pt; letter-spacing: .5px; }
+
+.first-page h1 { margin-top: 0; }
+.tag { display: inline-block; background: var(--accent); color: #fff; font-size: 8.6pt;
+       letter-spacing: 1.6px; text-transform: uppercase; padding: 2px 8px;
+       border-radius: 3px; margin-bottom: .5em; }
+
+/* spis treści */
+.toc ol { list-style: none; padding: 0; margin: 0; counter-reset: toc; }
+.toc li { counter-increment: toc; display: flex; align-items: baseline; gap: 7px;
+          padding: 2.2mm 0; border-bottom: 1px dotted #c9bda6; }
+.toc li::before { content: counter(toc); font-family: Herculanum, Georgia, serif;
+                  font-size: 12.5pt; color: var(--accent); min-width: 8mm; }
+.toc .t { font-family: Herculanum, Georgia, serif; font-size: 11.8pt; }
+.toc .d { font-size: 9pt; color: #6f5d47; margin-left: auto; text-align: right;
+          max-width: 50%; font-style: italic; }
+.toc .grp { margin: 4.5mm 0 1mm; font-size: 8.4pt; letter-spacing: 2px;
+            text-transform: uppercase; color: #9a8e78;
+            border-bottom: 1px solid #d8cdb6; padding-bottom: 1mm; }
+
+/* karta postaci wklejona na końcu */
+.pcard { border: 2.5px solid var(--accent); border-radius: 5px; padding: 5mm; }
+.pcard .hdr { border-bottom: 2px solid var(--accent); padding-bottom: 2.5mm;
+              margin-bottom: 3mm; }
+.pcard .nm { font-family: Luminari, Georgia, serif; font-size: 20pt;
+             color: var(--accent); line-height: 1.1; }
+.pcard .kl { font-family: Herculanum, Georgia, serif; font-size: 11.5pt; }
+.pcard .role { font-size: 8.4pt; letter-spacing: 1.3px; text-transform: uppercase;
+               color: #6f5d47; margin-top: 1mm; }
+.stats { display: flex; gap: 2mm; margin-bottom: 3mm; }
+.stat { flex: 1; text-align: center; border: 1.5px solid #c2b69e; border-radius: 4px;
+        padding: 1.6mm 0; }
+.stat .n { font-size: 7.6pt; letter-spacing: .6px; color: #6f5d47; }
+.stat .v { font-family: Herculanum, Georgia, serif; font-size: 18pt; line-height: 1; }
+.stat.best { background: var(--accent); border-color: var(--accent); }
+.stat.best .n { color: rgba(255,255,255,.85); }
+.stat.best .v { color: #fff; }
+.stat.worst .v { color: #a8331f; }
+.abil { border-left: 4px solid var(--accent); background: #f7f4ec; padding: 2.5mm 3.5mm;
+        margin-bottom: 3mm; }
+.abil .t { font-family: Herculanum, Georgia, serif; font-size: 10.5pt; color: var(--accent); }
+.abil .d { font-size: 9pt; margin-top: 1mm; }
+.abil .u { margin-top: 1.6mm; font-size: 8.4pt; letter-spacing: .4px; }
+.mik .h { font-size: 8.4pt; letter-spacing: 1.3px; text-transform: uppercase;
+          color: #6f5d47; margin-bottom: 1.2mm; }
+.mik .row { font-size: 8.8pt; margin: 1.1mm 0; }
+.pfoot { margin-top: 3mm; border-top: 1px solid #c9bda6; padding-top: 2mm;
+         font-size: 8.2pt; color: #6f5d47; text-align: center; line-height: 1.45; }
+.pfoot strong { color: var(--accent); }
+
+/* karta wyniku wklejona u Kazika */
+.score table { font-size: 9pt; }
+.score th, .score td { padding: 2.6mm 1.5mm; }
+.score td.n { width: 8mm; text-align: center; color: #6f5d47; }
+.score h3 { margin: 3mm 0 1.2mm; font-size: 10.5pt; }
+.score .bx { display: inline-block; width: 12px; height: 12px; border: 1.8px solid #16120d;
+             border-radius: 2px; margin-right: 4px; vertical-align: -2px; }
+.score .cols { display: flex; gap: 5mm; font-size: 9.6pt; }
+.score .cols > div { flex: 1; }
+.score .cols div div { margin: .9mm 0; }
+.score .tot { border: 3px double var(--accent); padding: 3mm; text-align: center;
+              margin-top: 3mm; }
+.score .tot .l { font-size: 8.4pt; letter-spacing: 1.6px; text-transform: uppercase;
+                 color: #6f5d47; }
+.score .tot .v { font-size: 26pt; font-family: Herculanum, Georgia, serif; }
+
+/* secret mission */
+.secret { border: 3px double var(--accent); padding: 10px 13px; margin-top: .5em; }
+.secret-warn { text-align: center; font-family: Herculanum, Georgia, serif;
+               font-size: 13pt; color: #a8331f; letter-spacing: 1px; margin: 0 0 .5em; }
+
+/* screen-only: the same pages, laid out to be read and tapped with a thumb */
+@page { size: auto; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: #e7e1d4; font-size: 12.2pt; margin: 0;
+       padding: 0 8px 130px; }
+.page { background: #fff; max-width: 760px; margin: 0 auto 14px;
+        padding: 24px 22px 30px 74px; border-radius: 2px;
+        box-shadow: 0 1px 5px rgba(0,0,0,.16);
+        page-break-after: auto; break-after: auto; position: relative; }
+.page.coverpage { padding: 0; }
+.cover { height: auto; padding: 34px 22px; }
+
+/* the block's coordinate, in the gutter. a pseudo-element on purpose: it must
+   not land in textContent, because every stored offset is measured against it */
+.page > [id] { position: relative; }
+.page > [id]::before {
+  content: attr(id); position: absolute; left: -64px; top: .35em;
+  width: 56px; text-align: right; pointer-events: none;
+  font: 600 8.5px/1.3 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #c3b79f; letter-spacing: .4px; }
+.page > [data-noted]::before { color: #b07d18; }
+.page > [data-noted] { box-shadow: -5px 0 0 #edc46a; background: #fffbf0; }
+/* the cover bleeds to its own edge, so there is no gutter to hang a chip in */
+.page.coverpage > [id]::before { content: none; }
+
+mark.hl { background: #ffe9a8; box-shadow: 0 1.5px 0 #d8ab2a; border-radius: 2px;
+          padding: 0 1px; color: inherit; cursor: pointer; }
+
+/* picking mode — one tap, then back to reading */
+body.pick .page > [id] { cursor: pointer; }
+body.pick .page > [id]:active { outline: 2px solid #d3a33c; outline-offset: 3px; }
+#hint { display: none; position: fixed; left: 0; right: 0; top: 0; z-index: 40;
+        background: #d3a33c; color: #fff; text-align: center; padding: 9px 12px;
+        font: 600 13px/1.3 -apple-system, system-ui, sans-serif; }
+body.pick #hint { display: block; }
+
+/* toolbar */
+#bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+       display: flex; gap: 6px; align-items: center; flex-wrap: wrap;
+       padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+       background: rgba(28,24,18,.96); color: #f3ece0;
+       font: 500 13px/1 -apple-system, system-ui, sans-serif; }
+#bar #cnt { font-variant-numeric: tabular-nums; opacity: .8; margin-right: auto;
+            padding-left: 4px; }
+#bar button { font: 600 13px/1 -apple-system, system-ui, sans-serif; color: #f3ece0;
+              background: #40372a; border: 0; border-radius: 7px;
+              padding: 10px 12px; cursor: pointer; -webkit-appearance: none; }
+#bar button.pri { background: #c9962f; color: #241d12; }
+#bar button:disabled { opacity: .4; }
+
+/* sheet + panel */
+#veil { position: fixed; inset: 0; z-index: 60; background: rgba(20,16,10,.45); }
+#veil[hidden], #panel[hidden], #sheet[hidden] { display: none; }
+#sheet, #panel { position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+                 background: #fdfbf6; border-radius: 14px 14px 0 0;
+                 padding: 14px 14px calc(14px + env(safe-area-inset-bottom));
+                 box-shadow: 0 -3px 22px rgba(0,0,0,.3);
+                 font: 14px/1.45 -apple-system, system-ui, sans-serif;
+                 max-height: 82vh; overflow: auto; }
+#sheet .meta, #panel .meta { font: 600 11px/1.4 ui-monospace, Menlo, monospace;
+                             color: #8a7a5c; letter-spacing: .3px; margin-bottom: 6px;
+                             word-break: break-word; }
+#sheet blockquote { margin: 0 0 10px; padding: 8px 10px; background: #f4efe3;
+                    border-left: 4px solid #c9962f; border-radius: 0 4px 4px 0;
+                    font: italic 13.5px/1.45 Georgia, serif; max-height: 30vh;
+                    overflow: auto; white-space: pre-wrap; }
+#sheet textarea { width: 100%; min-height: 96px; font: 15px/1.4 -apple-system, system-ui,
+                  sans-serif; padding: 9px 10px; border: 1.5px solid #cfc3a9;
+                  border-radius: 8px; background: #fff; resize: vertical;
+                  -webkit-appearance: none; }
+.btns { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+.btns .sp { margin-left: auto; }
+.btns button, #panel button { font: 600 14px/1 -apple-system, system-ui, sans-serif;
+      border: 0; border-radius: 8px; padding: 11px 14px; background: #e6ddc9;
+      color: #2a2318; cursor: pointer; -webkit-appearance: none; }
+.btns button.pri { background: #c9962f; color: #241d12; }
+.btns button.del { background: #f0dcd6; color: #8c1d10; }
+#panel h3 { margin: 0 0 10px; font: 700 15px/1.2 -apple-system, system-ui, sans-serif; }
+#panel .item { border-top: 1px solid #e3dac6; padding: 10px 0; }
+#panel .item:first-of-type { border-top: 0; }
+#panel .q { font: italic 13px/1.4 Georgia, serif; color: #55492f; }
+#panel .c { margin-top: 3px; }
+#panel .row { display: flex; gap: 8px; margin-top: 7px; }
+#panel .row button { padding: 7px 11px; font-size: 12.5px; }
+#panel .orph { color: #8c1d10; font-weight: 600; }
+#toast { position: fixed; left: 50%; bottom: 78px; transform: translateX(-50%);
+         z-index: 90; background: #241d12; color: #fff; padding: 9px 15px;
+         border-radius: 20px; font: 600 13px/1 -apple-system, system-ui, sans-serif; }
+#toast[hidden] { display: none; }
+#warn { background: #8c1d10; color: #fff; padding: 9px 12px; text-align: center;
+        font: 600 12.5px/1.4 -apple-system, system-ui, sans-serif; }
+#warn[hidden] { display: none; }
+@media print { #bar, #sheet, #panel, #veil, #toast, #hint, #warn { display: none !important; } }
+</style>
+</head><body>
+<section class="page coverpage" data-src="(generowane) druk/make_booklets.py · cover()"><div id="PI-01-01" data-kind="okładka" data-h="" class="cover">
+  <div class="sup">Ostatnia Wyprawa Piotrka</div>
+  <h1>Piotrek</h1>
+  <div class="kl">Arcymag Klawiatury</div>
+  <div class="rule"></div>
+  <div class="meta">
+    Dzielnica Uczonych &middot; Paryż<br>
+    piątek <strong>9 października 2026</strong> &middot; 15:00<br>
+    kostki: <strong>niebieskie</strong>
+  </div>
+  <div class="rule"></div>
+  <div class="proph">PIOTREK NIE BĘDZIE KODZIŁ W TEN DZIEŃ</div>
+</div></section>
+<section class="page first-page" data-src="(generowane) druk/make_booklets.py · toc_page()"><span class="tag">spis treści</span><h1 id="PI-02-01" data-kind="nagłówek" data-h="">Co jest w tej książeczce</h1><div id="PI-02-02" data-kind="spis treści" data-h="Co jest w tej książeczce" class="toc"><div class="grp">zanim wyjdziecie</div><ol><li><span class="t">Bezpieczeństwo</span><span class="d">przeczytaj to pierwsze</span></li><li><span class="t">Zasady Gry</span><span class="d">kostki, kary, punkty</span></li><li><span class="t">Klasy i Bohaterowie</span><span class="d">kto jest w czym dobry</span></li></ol><div class="grp">twoje strony</div><ol><li><span class="t">Twoja Karta</span><span class="d">arcymag klawiatury</span></li></ol><div class="grp">świat i warunek wyprawy</div><ol><li><span class="t">Dzielnica Uczonych</span><span class="d">gdzie właściwie jesteście</span></li><li><span class="t">Przepowiednia i Warunek Wyprawy</span><span class="d">po co idziecie i co musicie zdobyć</span></li></ol><div class="grp">prolog — 15:00, przy fontannie</div><ol><li><span class="t">Prolog i Przedstawienie Postaci</span><span class="d">na głos, na stojąco, 10 minut</span></li></ol><div class="grp">na końcu</div><ol><li><span class="t">Twoja karta postaci</span><span class="d">karta na stół</span></li><li><span class="t">Twoja Tajna Misja</span><span class="d">ostatnia strona — nie pokazuj nikomu</span></li></ol></div><p id="PI-02-03" data-kind="akapit" data-h="Co jest w tej książeczce" style="margin-top:5mm;font-size:9.2pt;color:#6f5d47"><em>Rozdziały idą w kolejności, w jakiej się ich używa: najpierw to, co czytasz przed wyjściem, potem twoje własne strony, a na końcu prolog — czytany na głos przy fontannie o 15:00.</em></p><p id="PI-02-04" data-kind="akapit" data-h="Co jest w tej książeczce" style="margin-top:3mm;font-size:9.6pt"><strong>Zaraz za tą stroną jest słowniczek</strong> — wszystkie skróty i znaczki na jednej kartce. Nie musisz się ich uczyć.</p></section>
+<section class="page first-page" data-src="16 - Słowniczek.md"><span class="tag">ściąga</span><h1 id="PI-03-01" data-kind="nagłówek" data-h="">Słowniczek — skróty i znaki</h1>
+<p id="PI-03-02" data-kind="akapit" data-h="Słowniczek — skróty i znaki"><strong>Jedna strona. Wszystko, co jest w tej książeczce skrótem albo znaczkiem.</strong></p>
+<p id="PI-03-03" data-kind="akapit" data-h="Słowniczek — skróty i znaki">Nie musisz się tego uczyć — masz to zawsze na drugiej stronie.</p>
+<hr>
+<h2 id="PI-03-04" data-kind="nagłówek" data-h="Słowniczek — skróty i znaki">KOSTKI</h2>
+<table id="PI-03-05" data-kind="tabela" data-h="Słowniczek — skróty i znaki › KOSTKI">
+<thead><tr><th>Zapis</th><th>Czytaj</th><th>Co to</th></tr></thead>
+<tbody>
+<tr><td><strong>k20</strong></td><td>„ka dwadzieścia"</td><td>Dwudziestościenna, największa, prawie kula. <strong>Jedyna, do której dodajesz bonus.</strong></td></tr>
+<tr><td><strong>k6</strong></td><td>„ka sześć"</td><td>Zwykły sześcian, jak w Chińczyku. <strong>Wybiera</strong> — zadanie z tabeli, Dziką Kartę.</td></tr>
+<tr><td><strong>k4</strong></td><td>„ka cztery"</td><td><strong>Piramidka.</strong> Zawsze znaczy <strong>karę</strong>: tyle łyków.</td></tr>
+<tr><td><strong>2k6</strong></td><td>„dwa ka sześć"</td><td>Dwie sześcienne naraz, <strong>sumujesz</strong> (2–12). Tak działa <strong>Dzika Karta</strong>.</td></tr>
+<tr><td><strong>2k20</strong></td><td>„dwa ka dwadzieścia"</td><td>Dwie dwudziestki, <strong>bierzesz wyższą</strong>. Tak działa <strong>pomoc</strong>.</td></tr>
+<tr><td><strong>nat 20</strong></td><td>„naturalna dwudziestka"</td><td>Na kostce <strong>leży 20</strong>, jeszcze przed bonusem. Sukces + coś wspaniałego + <strong>5 pkt</strong>.</td></tr>
+<tr><td><strong>nat 1</strong></td><td>„naturalna jedynka"</td><td>Na kostce <strong>leży 1</strong>. Porażka, a karę bierze <strong>cała drużyna</strong>.</td></tr>
+</tbody></table>
+<hr>
+<h2 id="PI-03-06" data-kind="nagłówek" data-h="Słowniczek — skróty i znaki › KOSTKI">LICZBY I ZASADY</h2>
+<table id="PI-03-07" data-kind="tabela" data-h="Słowniczek — skróty i znaki › LICZBY I ZASADY">
+<thead><tr><th>Skrót</th><th>Znaczy</th></tr></thead>
+<tbody>
+<tr><td><strong>ST</strong></td><td><strong>Stopień Trudności</strong> — liczba, którą musisz dobić rzutem. <strong>10</strong> łatwe · <strong>13</strong> trudne · <strong>16</strong> bohaterskie.</td></tr>
+<tr><td><strong>bonus</strong></td><td>Liczba z twojej karty przy danej cesze. Dodajesz ją do <strong>k20</strong>.</td></tr>
+<tr><td><strong>cecha</strong></td><td>ODWAGA · UROK · SPRYT · KONDYCJA. Zadanie mówi, której używacie.</td></tr>
+<tr><td><strong>postój</strong></td><td>Jedno miejsce na trasie. Jest ich <strong>siedem</strong>.</td></tr>
+<tr><td><strong>Akt</strong></td><td>Część wieczoru. <strong>I</strong> 15:00–16:35 · <strong>II</strong> 16:45–18:10 · <strong>III</strong> 18:15–19:45.</td></tr>
+<tr><td><strong>MG</strong></td><td><strong>Mistrz Gry.</strong> Kazik, przez całą noc, bez zmian.</td></tr>
+</tbody></table>
+<hr>
+<h2 id="PI-03-08" data-kind="nagłówek" data-h="Słowniczek — skróty i znaki › LICZBY I ZASADY">ZNAKI NA STRONACH</h2>
+<table id="PI-03-09" data-kind="tabela" data-h="Słowniczek — skróty i znaki › ZNAKI NA STRONACH">
+<thead><tr><th>Znak</th><th>Znaczy</th></tr></thead>
+<tbody>
+<tr><td><strong>⏱</strong></td><td><strong>Ile zadań</strong> ma paść na tym postoju. Wiersz u góry strony.</td></tr>
+<tr><td><strong>⚔️</strong> albo <strong>★</strong></td><td><strong>LEGENDARNE WYZWANIE</strong> — 25 punktów. Odbywa się zawsze, nie da się go przegapić.</td></tr>
+<tr><td><strong>◇</strong></td><td><strong>Coś jest ukryte.</strong> Zobaczysz ten znak — <strong>zapytaj prowadzącego</strong>. To cała zasada.</td></tr>
+<tr><td><strong><span class="box"></span></strong></td><td>Kratka do odhaczenia. Zdolność, mikstura, punkt.</td></tr>
+<tr><td><strong>🔀</strong></td><td>Postój <strong>opcjonalny</strong> — można go pominąć bez straty dla historii.</td></tr>
+</tbody></table>
+<hr>
+<h2 id="PI-03-10" data-kind="nagłówek" data-h="Słowniczek — skróty i znaki › ZNAKI NA STRONACH">PUNKTY I TORY</h2>
+<table id="PI-03-11" data-kind="tabela" data-h="Słowniczek — skróty i znaki › PUNKTY I TORY">
+<thead><tr><th>Nazwa</th><th>Co to</th></tr></thead>
+<tbody>
+<tr><td><strong>Punkty Szacunków</strong></td><td><strong>Jedna wspólna pula całej drużyny.</strong> To są <em>te</em> punkty. Cel: <strong>150</strong>.</td></tr>
+<tr><td><strong>Punkty Przysięgi</strong></td><td><strong>Osobny tor, tylko Sebastiana.</strong> Jeden za lekcję na postoju, potrzeba <strong>5</strong> do pasowania.</td></tr>
+<tr><td><strong>pieczęć</strong></td><td>Weto Sebastiana. <strong>Nietknięta na koniec = +15 punktów</strong> do wspólnej puli.</td></tr>
+<tr><td><strong>danina</strong></td><td>Konkretna obietnica z terminem, składana przy stole, jeśli brakuje do 150. <strong>15 punktów.</strong></td></tr>
+<tr><td><strong>Warunek wyprawy</strong></td><td><strong>150 punktów + 3 Legendarne + pasowany Giermek</strong> — wszystko <strong>przed ostatnim punktem podróży</strong>.</td></tr>
+</tbody></table>
+<hr>
+<h2 id="PI-03-12" data-kind="nagłówek" data-h="Słowniczek — skróty i znaki › PUNKTY I TORY">RZECZY, KTÓRE PADNĄ W TRAKCIE</h2>
+<table id="PI-03-13" data-kind="tabela" data-h="Słowniczek — skróty i znaki › RZECZY, KTÓRE PADNĄ W TRAKCIE">
+<thead><tr><th>Nazwa</th><th>Co to</th></tr></thead>
+<tbody>
+<tr><td><strong>Dzika Karta</strong></td><td>Prowadzący rzuca <strong>2k6</strong> i czyta, co się dzieje. Wchodzi od Aktu II, wywołuje ją <strong>6</strong> na kostce przy wyjściu.</td></tr>
+<tr><td><strong>Zegar Dzielnicy</strong></td><td>Rzut prowadzącego na <strong>k20</strong>, raz na postoju. <strong>Czysta atmosfera</strong> — zero punktów, zero kar.</td></tr>
+<tr><td><strong>mikstura</strong></td><td>Jedna z twoich czterech butelek. Każdej używasz <strong>raz na całą noc</strong> i <strong>działa dopiero wtedy, kiedy ją wypijesz</strong>.</td></tr>
+<tr><td><strong>Ostatni Próg</strong></td><td><strong>Ostatni punkt podróży.</strong> Nie należy do drużyny — jest tylko Piotrka.</td></tr>
+</tbody></table>
+<hr>
+<div id="PI-03-14" data-kind="ramka" data-h="Słowniczek — skróty i znaki › RZECZY, KTÓRE PADNĄ W TRAKCIE" class="callout quote"><p><strong>Jak nie wiesz, co znaczy skrót — jesteś na dobrej stronie.</strong></p>
+<p>Jak nie wiesz, co robić — patrz <strong>Zasady Gry</strong>. Jak dalej nie wiesz — pytasz <strong>Michała</strong> i jego decyzja jest ostateczna.</p></div></section>
+<section class="page first-page" data-src="13 - Bezpieczeństwo i Weto.md"><span class="tag">przeczytaj to pierwsze</span><h1 id="PI-04-01" data-kind="nagłówek" data-h="">Bezpieczeństwo</h1>
+<h2 id="PI-04-02" data-kind="nagłówek" data-h="Bezpieczeństwo">ALKOHOL</h2>
+<p id="PI-04-03" data-kind="akapit" data-h="Bezpieczeństwo › ALKOHOL">Zaczynamy o 15:00. Kończymy późno. To jest <strong>maraton, nie sprint</strong>.</p>
+<ul id="PI-04-04" data-kind="lista" data-h="Bezpieczeństwo › ALKOHOL"><li><strong>Łyk to łyk, nie kieliszek.</strong> Kara na k4 to od jednego do czterech łyków. Nie „do dna".</li><li><strong>Kto nie pije, ten nie pije.</strong> Nie ma znaczenia, czy dlatego, że nie chce, czy dlatego, że już wystarczy. Jego karą jest wersja trzeźwa i temat jest zamknięty.</li><li><strong>Woda nie jest karą i nie jest przegraną.</strong> W grze woda — <em>Źródlana Łza</em> — jest najsilniejszą miksturą w całym ekwipunku. To nie jest przypadek.</li></ul>
+<hr>
+<h2 id="PI-04-05" data-kind="nagłówek" data-h="Bezpieczeństwo › ALKOHOL">RZECZY PRAKTYCZNE</h2>
+<ul id="PI-04-06" data-kind="lista" data-h="Bezpieczeństwo › RZECZY PRAKTYCZNE"><li><strong>Kazik ma mapę.</strong> Wszyscy mają w telefonie zapisany adres finału: <strong>La Contrescarpe, 57 rue Lacépède, 75005 Paris</strong> — plus adres hotelu.</li></ul>
+<hr></section>
+<section class="page first-page" data-src="11 - Zasady Gry.md"><span class="tag">zasady</span><h1 id="PI-05-01" data-kind="nagłówek" data-h="">Zasady Gry</h1>
+<h2 id="PI-05-02" data-kind="nagłówek" data-h="Zasady Gry">JEDEN TEST, JEDNA KOSTKA</h2>
+<p id="PI-05-03" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA">Kiedy prowadzący ogłosi zadanie, wygląda to <strong>zawsze tak samo</strong>:</p>
+<div id="PI-05-04" data-kind="ramka" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA" class="callout quote"><p><strong>Rzuć dwudziestościenną kostką. Dodaj swój bonus. Porównaj z liczbą przy zadaniu.</strong></p></div>
+<pre id="PI-05-05" data-kind="blok kodu" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA">k20  +  bonus  ≥  ST      →   UDAŁO SIĘ
+k20  +  bonus  &lt;  ST      →   KARA</pre>
+<ul id="PI-05-06" data-kind="lista" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA"><li><strong>k20</strong> to duża kostka o dwudziestu ścianach. Jest tylko jedna taka w komplecie — nie pomylisz się.</li><li><strong>Bonus</strong> bierzesz ze swojej karty postaci. Zależy od tego, <em>jakiej cechy</em> wymaga zadanie.</li><li><strong>ST</strong> (stopień trudności) jest wydrukowany przy każdym zadaniu.</li></ul>
+<hr>
+<h3 id="PI-05-07" data-kind="nagłówek" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA">CO SIĘ DZIEJE PO RZUCIE</h3>
+<div id="PI-05-08" data-kind="ramka" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE" class="callout imp"><p class="ct">‼ NAJWAŻNIEJSZE ZDANIE NA TEJ STRONIE</p><p><strong>Zadanie wykonujecie ZAWSZE — niezależnie od rzutu.</strong></p>
+<p>Kostka nie decyduje o tym, <strong>czy</strong> to zrobicie. Decyduje o tym, <strong>jak wam poszło.</strong></p></div>
+<p id="PI-05-09" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE">Nigdy nie jest tak, że wam nie wyszło i nic się nie dzieje. <strong>Wstajecie i robicie to tak czy inaczej.</strong> Rzut mówi tylko, którą wersję sceny gracie.</p>
+<p id="PI-05-10" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE"><strong>Kolejność jest zawsze ta sama — cztery kroki:</strong></p>
+<ol id="PI-05-11" data-kind="lista" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE"><li><strong>Kazik czyta zadanie i podaje ST.</strong></li><li><strong>Teraz — i tylko teraz — zgłaszacie miksturę albo pomoc.</strong> Po rzucie jest za późno.</li><li><strong>Rzucasz k20, dodajesz bonus, porównujesz z ST.</strong></li><li><strong>Idziesz i to robisz.</strong> Kostka już powiedziała, jak to wyjdzie.</li></ol>
+<table id="PI-05-12" data-kind="tabela" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE">
+<thead><tr><th></th><th><strong>SUKCES</strong> — wyszło ≥ ST</th><th><strong>PORAŻKA</strong> — wyszło &lt; ST</th></tr></thead>
+<tbody>
+<tr><td><strong>Czy robisz zadanie?</strong></td><td><strong>tak</strong></td><td><strong>tak, dokładnie to samo zadanie</strong></td></tr>
+<tr><td><strong>Jak to wygląda</strong></td><td>idzie gładko, świat współpracuje</td><td>idzie krzywo — Kazik dorzuca komplikację</td></tr>
+<tr><td><strong>Punkty do puli</strong></td><td><strong>pełna stawka z tabeli</strong></td><td><strong>0</strong></td></tr>
+<tr><td><strong>Pijesz?</strong></td><td>nie</td><td><strong>tak — rzuć k4, tyle łyków</strong></td></tr>
+</tbody></table>
+<p id="PI-05-13" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE"><strong>Jeden rzut na zadanie. Nie ma powtórek i nie ma poprawek.</strong> Nie zgadzacie się na drugie podejście, nawet jeśli ktoś bardzo prosi — od tego się rozłazi tempo całego wieczoru.</p>
+<hr>
+<p id="PI-05-14" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE"><strong>Przykład — obie ścieżki tego samego zadania.</strong></p>
+<p id="PI-05-15" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE">Zadanie: <em>„Namów obcą osobę, żeby zrobiła wam zdjęcie — Urok, ST 10."</em> Kazik ma Urok <strong>+3</strong>.</p>
+<div id="PI-05-16" data-kind="ramka" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE" class="callout quote"><p><strong>Wypada 8.</strong> 8 + 3 = <strong>11</strong> ≥ 10 → <strong>sukces.</strong> Kazik podchodzi, obcy robi zdjęcie, wszyscy się mieszczą w kadrze. <strong>+10 punktów do puli.</strong> Nikt nie pije.</p>
+<p><strong>Wypada 4.</strong> 4 + 3 = <strong>7</strong> &lt; 10 → <strong>porażka.</strong> Kazik i tak podchodzi — ale pierwsza osoba jest w biegu, druga nie mówi po angielsku, a trzecia obcina wam głowy. <strong>Zdjęcie i tak powstaje.</strong> <strong>0 punktów</strong>, Kazik rzuca <strong>k4</strong> i wypija tyle łyków.</p></div>
+<p id="PI-05-17" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE"><strong>W obu wersjach zdjęcie zostało zrobione.</strong> Różnica jest w punktach, w łykach i w tym, ile z tego było zabawy.</p>
+<h3 id="PI-05-18" data-kind="nagłówek" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › CO SIĘ DZIEJE PO RZUCIE">Zadania bez rzutu</h3>
+<p id="PI-05-19" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Zadania bez rzutu">Część zadań ma w tabeli napisane <strong>„grupowe, bez rzutu"</strong>. Tam nie ma kostki i nie ma porażki — robicie to i bierzecie punkty. Tak samo działają <strong>zadania obowiązkowe</strong> oznaczone w książeczce prowadzącego: przy nich punkty należą się nawet za porażkę i jest to napisane wprost przy zadaniu.</p>
+<h3 id="PI-05-20" data-kind="nagłówek" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Zadania bez rzutu">Pomoc — 2k20</h3>
+<p id="PI-05-21" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Pomoc — 2k20">Zanim rzucisz, ktoś inny może powiedzieć <strong>„wchodzę w to z tobą"</strong>. Wtedy rzucacie <strong>dwiema dwudziestkami i liczycie wyższy wynik</strong> — z bonusem tego, kto zadanie prowadzi.</p>
+<p id="PI-05-22" data-kind="akapit" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Pomoc — 2k20"><strong>Cena jest taka, że przy porażce piją obaj.</strong> Dlatego pomoc jest decyzją, a nie odruchem. Zgłaszasz ją <strong>przed rzutem</strong>. Do jednego zadania może się dołączyć <strong>tylko jedna osoba</strong>.</p>
+<h3 id="PI-05-23" data-kind="nagłówek" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Pomoc — 2k20">Stopnie trudności</h3>
+<table id="PI-05-24" data-kind="tabela" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Stopnie trudności">
+<thead><tr><th>ST</th><th>Znaczy</th><th>Kiedy</th></tr></thead>
+<tbody>
+<tr><td><strong>10</strong></td><td>łatwe</td><td>Zrobisz to, jeśli się postarasz.</td></tr>
+<tr><td><strong>13</strong></td><td>trudne</td><td>Potrzebujesz dobrej cechy albo szczęścia.</td></tr>
+<tr><td><strong>16</strong></td><td>bohaterskie</td><td>Prawie zawsze wymaga pomocy albo mikstury.</td></tr>
+</tbody></table>
+<h3 id="PI-05-25" data-kind="nagłówek" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Stopnie trudności">Dwie liczby, które łamią zasady</h3>
+<ul id="PI-05-26" data-kind="lista" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Dwie liczby, które łamią zasady"><li><strong>Naturalna 20</strong> (na kostce leży 20, jeszcze przed dodaniem bonusu) — sukces <strong>i</strong> dzieje się coś ekstra i wspaniałego. Prowadzący wymyśla co. Drużyna dostaje <strong>+5 punktów</strong> ponad nagrodę zadania.</li><li><strong>Naturalna 1</strong> (na kostce leży 1) — porażka, a karę bierze <strong>cała drużyna</strong>, nie tylko rzucający.</li></ul>
+<hr>
+<h2 id="PI-05-27" data-kind="nagłówek" data-h="Zasady Gry › JEDEN TEST, JEDNA KOSTKA › Dwie liczby, które łamią zasady">TRZY KOSTKI, TRZY ZADANIA</h2>
+<p id="PI-05-28" data-kind="akapit" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA">W tej grze są <strong>tylko trzy rodzaje kostek</strong>. Każda ma <strong>jedną robotę i zawsze tę samą</strong>. Nie musisz niczego zapamiętywać — wystarczy, że rozpoznasz kształt.</p>
+<table id="PI-05-29" data-kind="tabela" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA">
+<thead><tr><th>Kostka</th><th>Zawsze znaczy</th><th>Do czego</th></tr></thead>
+<tbody>
+<tr><td><strong>k20</strong> — dwudziestościenna, największa, prawie kula</td><td><strong>TEST</strong></td><td>Jedyna kostka, do której dodajesz bonus. Sprawdza, czy ci się udało.</td></tr>
+<tr><td><strong>k6</strong> — sześcian, taka jak w Chińczyku</td><td><strong>WYBÓR</strong></td><td>Które z sześciu zadań. Czy Dzielnica wtrąci się po drodze. Nie dodajesz nic.</td></tr>
+<tr><td><strong>k4</strong> — czterościenna, <strong>piramidka</strong></td><td><strong>KARA</strong></td><td>Ile łyków. Jak bardzo boli. Nie dodajesz nic.</td></tr>
+</tbody></table>
+<p id="PI-05-30" data-kind="akapit" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA"><strong>Kilka kostek tego samego rodzaju to normalna rzecz.</strong> Stąd bierze się cała reszta gry:</p>
+<ul id="PI-05-31" data-kind="lista" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA"><li><strong>2k6</strong> — rzucasz dwiema sześciennymi i sumujesz (wynik 2–12). Tak działa <strong>Dzika Karta</strong>.</li><li><strong>2k4</strong> — podwójna kara. Boli.</li><li><strong>2k20, bierzesz wyższy wynik</strong> — tak działa <strong>pomoc</strong>. Jeśli inny gracz ci pomaga, rzucacie dwiema dwudziestkami i liczysz lepszą. To jedyna „przewaga" w tej grze i nie potrzeba do niej nowej kostki.</li></ul>
+<h3 id="PI-05-32" data-kind="nagłówek" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA">Kiedy poznajecie którą kostkę</h3>
+<p id="PI-05-33" data-kind="akapit" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Kiedy poznajecie którą kostkę">Nie dostajecie wszystkiego naraz.</p>
+<table id="PI-05-34" data-kind="tabela" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Kiedy poznajecie którą kostkę">
+<thead><tr><th>Kiedy</th><th>Co dochodzi</th></tr></thead>
+<tbody>
+<tr><td><strong>Postój 1 — samouczek</strong></td><td><strong>k20</strong> i <strong>k6</strong>. Uczycie się ich na zadaniu, którego nie da się przegrać.</td></tr>
+<tr><td><strong>Pierwsza porażka wieczoru</strong></td><td><strong>k4</strong>. Poznajesz kostkę kary przez to, że zostajesz ukarany. Tak się zapamiętuje najlepiej.</td></tr>
+<tr><td><strong>Początek Aktu II</strong></td><td><strong>2k6 — Dzika Karta</strong>. Prowadzący czyta wtedy ramkę <strong>NOWA ZASADA</strong>.</td></tr>
+</tbody></table>
+<p id="PI-05-35" data-kind="akapit" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Kiedy poznajecie którą kostkę"><strong>Nigdy nie używajcie kostki przed jej wprowadzeniem.</strong></p>
+<h3 id="PI-05-36" data-kind="nagłówek" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Kiedy poznajecie którą kostkę">Skąd czyja kostka</h3>
+<p id="PI-05-37" data-kind="akapit" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Skąd czyja kostka">Każdy ma <strong>własny komplet trzech kostek w kolorze swojej klasy</strong>. Nie pożyczacie sobie kostek — nie ma na to czasu, a poza tym zabieracie je ze sobą do domu.</p>
+<table id="PI-05-38" data-kind="tabela" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Skąd czyja kostka">
+<thead><tr><th>Gracz</th><th>Kolor</th></tr></thead>
+<tbody>
+<tr><td>Piotrek</td><td>niebieski</td></tr>
+<tr><td>Kazik</td><td>złoty</td></tr>
+<tr><td>Mateusz</td><td>czarny</td></tr>
+<tr><td>Michał</td><td>zielony</td></tr>
+<tr><td>Sebastian</td><td>biały</td></tr>
+</tbody></table>
+<div id="PI-05-39" data-kind="ramka" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Skąd czyja kostka" class="callout quote"><p><strong>Piramidka.</strong> Kostka k4 to czworościan — cztery trójkątne ściany. To jest <strong>piramida</strong>. Zapamiętaj ten kształt. Nie pytaj dlaczego.</p></div>
+<hr>
+<h2 id="PI-05-40" data-kind="nagłówek" data-h="Zasady Gry › TRZY KOSTKI, TRZY ZADANIA › Skąd czyja kostka">KARY</h2>
+<p id="PI-05-41" data-kind="akapit" data-h="Zasady Gry › KARY"><strong>Domyślna kara za porażkę to picie.</strong> Rzucasz <strong>k4</strong> — tyle łyków wypijasz.</p>
+<p id="PI-05-42" data-kind="akapit" data-h="Zasady Gry › KARY"><strong>Kara nie zastępuje zadania.</strong> Wypijasz <strong>i tak samo wykonujesz zadanie</strong> — patrz wyżej.</p>
+<p id="PI-05-43" data-kind="akapit" data-h="Zasady Gry › KARY">Istnieją kary trzeźwe (pompki ×5 za oczko na k4, piosenka, wyznanie, komplement dla obcej osoby), ale są <strong>wyjątkiem</strong>, nie regułą. Pojawiają się:</p>
+<ul id="PI-05-44" data-kind="lista" data-h="Zasady Gry › KARY"><li>gdy zadanie wprost je przewiduje,</li><li>gdy ktoś nie pije alkoholu. Wtedy jego karą jest wersja trzeźwa i tyle. To nie podlega negocjacji ani żartom.</li></ul>
+<hr>
+<h2 id="PI-05-45" data-kind="nagłówek" data-h="Zasady Gry › KARY">MIKSTURY</h2>
+<p id="PI-05-46" data-kind="akapit" data-h="Zasady Gry › MIKSTURY"><strong>Każdy ma cztery butelki — swoje własne.</strong></p>
+<div id="PI-05-47" data-kind="ramka" data-h="Zasady Gry › MIKSTURY" class="callout imp"><p class="ct">‼ ROZDANIE MIKSTUR — POSTÓJ 1, PRZY FONTANNIE</p><p>Sebastian przynosi <strong>cały zapas w jednym plecaku</strong> i przy pierwszym postoju <strong>rozdaje każdemu jego cztery butelki</strong>. Od tej chwili <strong>każdy niesie swoje</strong>.</p></div>
+<p id="PI-05-48" data-kind="akapit" data-h="Zasady Gry › MIKSTURY">Każdej używasz <strong>raz na całą noc</strong>. Odhacz na karcie postaci, kiedy zużyjesz.</p>
+<table id="PI-05-49" data-kind="tabela" data-h="Zasady Gry › MIKSTURY">
+<thead><tr><th>Co to naprawdę jest</th><th>Nazwa</th><th>Działanie</th><th><strong>Kiedy ją pijesz</strong></th></tr></thead>
+<tbody>
+<tr><td>małe białe wino</td><td><strong>Wino Uczonych</strong></td><td><strong>+3 do jednego rzutu.</strong></td><td><strong>Zanim rzucisz.</strong> Ogłaszasz, pijesz łyk, dopiero potem bierzesz k20. Po rzucie nie działa.</td></tr>
+<tr><td>mała butelka Jacka</td><td><strong>Ogień Starego Jacka</strong></td><td><strong>Automatyczny sukces</strong> bez rzutu. Twój <strong>następny</strong> test ma <strong>−2</strong> (kac).</td><td><strong>Zamiast rzutu.</strong> Ogłaszasz, wypijasz na miejscu, k20 w ogóle nie leci.</td></tr>
+<tr><td>soczek pomarańczowy</td><td><strong>Nektar Słońca</strong></td><td><strong>Anuluje jedną karę</strong> wymierzoną tobie.</td><td><strong>Po ogłoszeniu kary, zamiast łyków.</strong> Pijesz soczek i nie pijesz k4.</td></tr>
+<tr><td>woda</td><td><strong>Źródlana Łza</strong></td><td><strong>„JESZCZE JEDNO."</strong> Wymuszasz <strong>dodatkowe zadanie</strong> na tym postoju, <strong>warte podwójnie</strong>.</td><td><strong>Kiedy chcesz</strong> — także wtedy, gdy prowadzący już powiedział „idziemy dalej".</td></tr>
+</tbody></table>
+<p id="PI-05-50" data-kind="akapit" data-h="Zasady Gry › MIKSTURY"><strong>Zasada jedna dla wszystkich czterech: mikstura działa dopiero wtedy, kiedy ją wypijesz.</strong></p>
+<p id="PI-05-51" data-kind="akapit" data-h="Zasady Gry › MIKSTURY">Zapowiedzenie nie wystarcza. Butelka pusta = mikstura zużyta, kreska na karcie.</p>
+<p id="PI-05-52" data-kind="akapit" data-h="Zasady Gry › MIKSTURY"><strong>Mikstur nie da się nikomu oddać ani pożyczyć</strong> — każdy pije wyłącznie swoje.</p>
+<h3 id="PI-05-53" data-kind="nagłówek" data-h="Zasady Gry › MIKSTURY">NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz</h3>
+<p id="PI-05-54" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz"><strong>Kasuje picie. Nie kasuje porażki.</strong> Nie zmienia rzutu, nie daje punktów i nie odwołuje zadania — zadanie i tak wykonujesz, punktów za nie i tak nie ma. Znika <strong>wyłącznie kara</strong>.</p>
+<p id="PI-05-55" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz"><strong>Moment jest ścisły: dopiero po tym, jak padnie kara.</strong> Prowadzący mówi „nie wyszło, rzuć k4" — i wtedy zamiast rzucać i pić, <strong>wypijasz soczek</strong>. Kara przepada.</p>
+<p id="PI-05-56" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz">Działa na <strong>każdą karę wymierzoną tobie</strong>:</p>
+<ul id="PI-05-57" data-kind="lista" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz"><li>k4 łyków za nieudany test — najczęstszy przypadek,</li><li><strong>karę, która po naturalnej 1 spadła na wszystkich.</strong> Kiedy komukolwiek wypadnie 1 na k20, pije <strong>cała piątka</strong> — każdy rzuca własną k4. Nektar wyłącza <strong>twoją k4</strong>; pozostała czwórka pije normalnie,</li><li>łyki z Dzikiej Karty — np. <strong>2 · Klątwa Dzielnicy</strong> albo <strong>7 · kto ostatni patrzył w telefon</strong>.</li></ul>
+<p id="PI-05-58" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz"><strong>Czego nie robi:</strong> nie zdejmuje kary z kolegi, nie da się go ogłosić przed rzutem „na zapas" i nie zamienia porażki w sukces.</p>
+<div id="PI-05-59" data-kind="ramka" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz" class="callout quote"><p><strong>Przykład.</strong> 20:40, Sebastian oblewa test na Kondycję, k4 wypada <strong>4</strong>. To byłaby czwarta kara tego wieczoru, a przed nim jeszcze przysięga i droga pod górę. Wypija soczek — <strong>zero łyków</strong>, zadanie i tak robi. <strong>To jest hamulec ukryty w kartoniku po soku i to jest cały jego sens.</strong></p></div>
+<h3 id="PI-05-60" data-kind="nagłówek" data-h="Zasady Gry › MIKSTURY › NEKTAR SŁOŃCA (soczek) — kiedy to naprawdę wyciągasz">ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO"</h3>
+<p id="PI-05-61" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;"><strong>To jest jedyna mikstura, która nie ratuje cię z kłopotu — tylko go tworzy.</strong></p>
+<p id="PI-05-62" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;">Wypijasz wodę, mówisz na głos <strong>„jeszcze jedno"</strong> i <strong>drużyna bierze dodatkowe zadanie z tego postoju</strong> — ponad limit ⏱, ponad plan prowadzącego.</p>
+<table id="PI-05-63" data-kind="tabela" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;">
+<tbody>
+<tr><td><strong>Jak</strong></td><td>prowadzący rzuca <strong>k6</strong> na tabelę zadań tego postoju. Trafi w zadanie, które już robiliście — rzuca jeszcze raz</td></tr>
+<tr><td><strong>Kto rzuca</strong></td><td><strong>ty wybierasz</strong> — możesz wziąć to na siebie albo wystawić kogokolwiek</td></tr>
+<tr><td><strong>Ile warte</strong></td><td><strong>podwójnie.</strong> Zadanie za 10 daje 20</td></tr>
+<tr><td><strong>Kara za porażkę</strong></td><td><strong>żadna. Nikt nie pije.</strong> To woda</td></tr>
+<tr><td><strong>Kiedy</strong></td><td>kiedy chcesz — <strong>także po tym, jak prowadzący powiedział „idziemy dalej".</strong> Wtedy nie idziecie</td></tr>
+</tbody></table>
+<p id="PI-05-64" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;"><strong>Prowadzący nie może odmówić.</strong> Może odmówić tylko Sebastian, wetem — jak wszystkiemu innemu.</p>
+<p id="PI-05-65" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;"><strong>Nie działa w trzech miejscach</strong>, bo nie ma tam tabeli zadań: przy <strong>Przysiędze pod Drzewem</strong>, przy stole w <strong>finale</strong> i przy <strong>Ostatnim Progu</strong>.</p>
+<div id="PI-05-66" data-kind="ramka" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;" class="callout quote"><p><strong>Przykład.</strong> 18:35, biblioteka, zrobiliście jedno zadanie i wszyscy już wychodzą. Mateusz wypija wodę: <em>„jeszcze jedno"</em>. Wypada zadanie za 10 punktów — <strong>jest warte 20</strong>. Rzuca Sebastian, nie trafia w ST. <strong>Punktów nie ma, ale nikt nie pije</strong> i scena i tak się wydarzyła.</p></div>
+<p id="PI-05-67" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;"><strong>Woda jest najsilniejszą butelką w tym plecaku i jest bezalkoholowa. To nie jest przypadek.</strong></p>
+<h3 id="PI-05-68" data-kind="nagłówek" data-h="Zasady Gry › MIKSTURY › ŹRÓDLANA ŁZA (woda) — „JESZCZE JEDNO&quot;">ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE</h3>
+<p id="PI-05-69" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE"><strong>Michał (Alchemik) jako jedyny może dokupywać mikstury po drodze.</strong></p>
+<p id="PI-05-70" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE"><strong>Raz na każdy Akt</strong> — czyli <strong>trzy razy przez całą noc</strong> — ogłasza <strong>zakup</strong>. Wtedy wchodzi do sklepu albo do baru i kupuje <strong>ile butelek chce i dla kogo chce</strong>: dla siebie i dla pozostałych. Rozdaje je od razu; od tej chwili to są mikstury tych osób i pije je każdy sam.</p>
+<table id="PI-05-71" data-kind="tabela" data-h="Zasady Gry › MIKSTURY › ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE">
+<tbody>
+<tr><td><strong>Ile razy</strong></td><td><strong>1 na Akt</strong>, czyli 3 na całą noc</td></tr>
+<tr><td><strong>Ile butelek</strong></td><td><strong>bez limitu</strong> — tyle, ile jest w sklepie i na ile mu starczy</td></tr>
+<tr><td><strong>Dla kogo</strong></td><td>dla kogo chce, także dla wszystkich naraz</td></tr>
+<tr><td><strong>Kto płaci</strong></td><td><strong>Michał, swoimi pieniędzmi.</strong> To jest cały hamulec tej zasady</td></tr>
+</tbody></table>
+<p id="PI-05-72" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE"><strong>To nie jest oddawanie mikstur.</strong> Zakaz z akapitu wyżej dotyczy <strong>twoich własnych czterech butelek</strong> — tych nie wolno nikomu podać. Butelka kupiona po drodze jest nowa i należy do tego, komu Michał ją wręczy.</p>
+<p id="PI-05-73" data-kind="akapit" data-h="Zasady Gry › MIKSTURY › ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE">Kupiona butelka <strong>działa dokładnie jak ta mikstura, której odpowiada</strong>. Pokazujecie ją Kazikowi, on odhacza zakup na karcie wyniku. Zdolność <strong>Identyfikacja Mikstury</strong> działa też na napoje kupione w barze, nie tylko na te cztery butelki.</p>
+<hr>
+<h2 id="PI-05-74" data-kind="nagłówek" data-h="Zasady Gry › MIKSTURY › ZAKUPY MICHAŁA — RAZ NA AKT, DLA KOGO CHCE">PUNKTY</h2>
+<p id="PI-05-75" data-kind="akapit" data-h="Zasady Gry › PUNKTY">Jedna wspólna pula: <strong>Punkty Szacunków</strong>. Zapisuje je Kazik na wspólnej karcie wyniku.</p>
+<table id="PI-05-76" data-kind="tabela" data-h="Zasady Gry › PUNKTY">
+<thead><tr><th>Za co</th><th>Ile</th></tr></thead>
+<tbody>
+<tr><td>zadanie łatwe</td><td><strong>5</strong></td></tr>
+<tr><td>zadanie trudne</td><td><strong>10</strong></td></tr>
+<tr><td>zadanie ciężkie</td><td><strong>15</strong></td></tr>
+<tr><td><strong>LEGENDARNE WYZWANIE</strong></td><td><strong>25</strong></td></tr>
+<tr><td>naturalna 20</td><td><strong>+5</strong> do nagrody zadania</td></tr>
+<tr><td><strong>nietknięta pieczęć Giermka</strong></td><td><strong>+15</strong> przy stole</td></tr>
+<tr><td><strong>danina</strong> <em>(tylko jeśli brakuje do 150)</em></td><td><strong>15</strong> za jedną</td></tr>
+<tr><td><strong>porażka w teście</strong></td><td><strong>0</strong> — zadanie i tak wykonujecie, punktów za nie nie ma</td></tr>
+</tbody></table>
+<p id="PI-05-77" data-kind="akapit" data-h="Zasady Gry › PUNKTY"><strong>Za porażkę nikt nie traci już zdobytych punktów.</strong> Pula tylko rośnie albo stoi w miejscu — nigdy nie spada. Jedyne, co zabiera porażka, to punkty, których jeszcze nie mieliście.</p>
+<p id="PI-05-78" data-kind="akapit" data-h="Zasady Gry › PUNKTY"><strong>Legendarne Wyzwania nie są losowane.</strong> Nie ma ich w tabelach k6 — na postoju, który ma Legendarne, <strong>prowadzący ogłasza je zawsze</strong>, niezależnie od rzutów. Są oznaczone w książeczce dużym napisem ⚔️ i nie da się ich przegapić.</p>
+<p id="PI-05-79" data-kind="akapit" data-h="Zasady Gry › PUNKTY">Jest ich w całej grze <strong>pięć</strong>, z czego <strong>trzy są obowiązkowe</strong> (Arena Lutecji, Punkt Zero, Przysięga pod Drzewem), jedno leży na <strong>postoju opcjonalnym</strong>, a jedno — na ukrytej wyprawie.</p>
+<div id="PI-05-80" data-kind="ramka" data-h="Zasady Gry › PUNKTY" class="callout quote"><h3>WARUNEK WYPRAWY</h3>
+<p><strong>150 Punktów Szacunków</strong> + <strong>co najmniej 3 Legendarne Wyzwania</strong> + <strong>Giermek pasowany na rycerza</strong>.</p>
+<p><strong>Wszystko trzy — przed ostatnim punktem podróży.</strong></p></div>
+<h3 id="PI-05-81" data-kind="nagłówek" data-h="Zasady Gry › PUNKTY">OSTATNI PUNKT PODRÓŻY</h3>
+<p id="PI-05-82" data-kind="akapit" data-h="Zasady Gry › PUNKTY › OSTATNI PUNKT PODRÓŻY"><strong>Punkty liczycie w drodze</strong>, na ostatnim odcinku pod górę — trzy krótkie przystanki, na każdym prowadzący czyta kawałek karty wyniku i podaje sumę. Do przedostatniego miejsca dochodzicie <strong>wiedząc, ile wam brakuje</strong>, a nie zgadując.</p>
+<p id="PI-05-83" data-kind="akapit" data-h="Zasady Gry › PUNKTY › OSTATNI PUNKT PODRÓŻY">Rachunek zamykacie przy stole: pieczęć, tajne misje, suma, pasowanie. <strong>Kiedy wstajecie od stołu, wyprawa drużyny jest skończona i punktów już nie ma.</strong></p>
+<div id="PI-05-84" data-kind="ramka" data-h="Zasady Gry › PUNKTY › OSTATNI PUNKT PODRÓŻY" class="callout quote"><p><strong>Zostaje jeszcze jeden punkt podróży — i jest tylko Piotrka.</strong></p>
+<p>Wchodzi się na niego wyłącznie za spełniony warunek wyprawy. <strong>Za tym progiem nie ma już punktów</strong> — jest to, po co tu przyszliście, i jest ktoś, kto tego pilnuje.</p></div>
+<p id="PI-05-85" data-kind="akapit" data-h="Zasady Gry › PUNKTY › OSTATNI PUNKT PODRÓŻY"><strong>Jeśli zabraknie do 150</strong> — nie przepadło. Czwórka może dopłacić <strong>Daniną</strong>: każdy mówi na głos jedną konkretną rzecz, którą zrobi dla Piotrka i Karoliny w pierwszym roku, <strong>z terminem</strong>. <strong>Danina jest warta 15 punktów.</strong> Piotrek nie płaci za własną wyprawę.</p>
+<hr>
+<h2 id="PI-05-86" data-kind="nagłówek" data-h="Zasady Gry › PUNKTY › OSTATNI PUNKT PODRÓŻY">⏱ ILE ZADAŃ NA POSTOJU</h2>
+<p id="PI-05-87" data-kind="akapit" data-h="Zasady Gry › ⏱ ILE ZADAŃ NA POSTOJU"><strong>To jest najważniejsza liczba w całej grze po tych stu pięćdziesięciu</strong> — i jedyna, o którą możecie się sami upomnieć.</p>
+<table id="PI-05-88" data-kind="tabela" data-h="Zasady Gry › ⏱ ILE ZADAŃ NA POSTOJU">
+<thead><tr><th>Rodzaj postoju</th><th>Ile zadań robicie</th></tr></thead>
+<tbody>
+<tr><td><strong>Tawerna</strong> — siadacie, ~40 min</td><td><strong>2–3 zadania.</strong> Rzut k6 → zadanie → <strong>rzut k6 jeszcze raz</strong> → zadanie</td></tr>
+<tr><td><strong>Scena uliczna</strong> — na stojąco, ~10 min</td><td><strong>1 zadanie</strong>, potem idziecie dalej</td></tr>
+<tr><td><strong>Miejsce Mocy</strong> — pomnik, arena, katedra</td><td><strong>1 zadanie</strong> (a jeśli jest tam Legendarne — <strong>Legendarne + 1</strong>)</td></tr>
+</tbody></table>
+<p id="PI-05-89" data-kind="akapit" data-h="Zasady Gry › ⏱ ILE ZADAŃ NA POSTOJU"><strong>Legendarne Wyzwanie nie zastępuje zadania z tabeli.</strong> Na postoju, który je ma, robicie jedno i drugie.</p>
+<div id="PI-05-90" data-kind="ramka" data-h="Zasady Gry › ⏱ ILE ZADAŃ NA POSTOJU" class="callout quote"><p><strong>Jedno zadanie na postoju to za mało.</strong> Siedem postojów po jednym zadaniu to jakieś 70 punktów — mniej niż połowa tego, czego potrzeba. <strong>Bez 2–3 zadań w tawernach 150 się nie uzbiera.</strong></p></div>
+<p id="PI-05-91" data-kind="akapit" data-h="Zasady Gry › ⏱ ILE ZADAŃ NA POSTOJU"><strong>Prowadzący pilnuje tempa i ma prawo rzucić k6 bez pytania o zgodę.</strong> Ale jeśli widzicie, że rozmowa się rozjechała, a od ostatniego zadania minęło pół godziny — <strong>upomnijcie się sami.</strong> U góry każdej strony postoju prowadzący ma wydrukowane, ile zadań ma tam paść.</p>
+<hr>
+<h2 id="PI-05-92" data-kind="nagłówek" data-h="Zasady Gry › ⏱ ILE ZADAŃ NA POSTOJU">DWA RZUTY k6 NA KAŻDYM POSTOJU</h2>
+<p id="PI-05-93" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU"><strong>Trasa jest wydrukowana na kolejnych stronach. Kostka jej nie wybiera.</strong> Kostka mówi wam tylko <strong>co tam robicie</strong> i <strong>czy Dzielnica wtrąci się po drodze</strong>.</p>
+<h3 id="PI-05-94" data-kind="nagłówek" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU">1 · W TRAKCIE POSTOJU — k6 na zadanie</h3>
+<p id="PI-05-95" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 1 · W TRAKCIE POSTOJU — k6 na zadanie">Prowadzący rzuca <strong>k6</strong> i czyta zadanie o tym numerze z <strong>tabeli sześciu zadań tego postoju</strong>. Wykonujecie je — a potem, jeśli postój jest długi, <strong>rzuca jeszcze raz na kolejne</strong>.</p>
+<p id="PI-05-96" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 1 · W TRAKCIE POSTOJU — k6 na zadanie"><strong>Ile razy na tym konkretnym postoju</strong> — patrz sekcja wyżej. W skrócie: <strong>tawerna 2–3, scena uliczna i Miejsce Mocy 1.</strong></p>
+<h3 id="PI-05-97" data-kind="nagłówek" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 1 · W TRAKCIE POSTOJU — k6 na zadanie">2 · PRZY WYJŚCIU — jedna k6</h3>
+<p id="PI-05-98" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 2 · PRZY WYJŚCIU — jedna k6">Kiedy postój się kończy, prowadzący rzuca <strong>jedną k6</strong> i ma ona <strong>jedno jedyne znaczenie</strong>:</p>
+<table id="PI-05-99" data-kind="tabela" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 2 · PRZY WYJŚCIU — jedna k6">
+<thead><tr><th>k6</th><th>Co znaczy</th></tr></thead>
+<tbody>
+<tr><td><strong>6</strong></td><td><strong>DZIKA KARTA.</strong> Dzielnica się w to miesza. Dzieje się <strong>w drodze</strong>, zanim dojdziecie na następne miejsce</td></tr>
+<tr><td><strong>1–5</strong></td><td><strong>nic.</strong> Idziecie tam, gdzie napisane</td></tr>
+</tbody></table>
+<p id="PI-05-100" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 2 · PRZY WYJŚCIU — jedna k6"><strong>Ten rzut wchodzi dopiero w Akcie II</strong> — razem z Dziką Kartą. Przez trzy pierwsze postoje nikt nie rzuca przy wyjściu; po prostu idziecie dalej.</p>
+<h3 id="PI-05-101" data-kind="nagłówek" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › 2 · PRZY WYJŚCIU — jedna k6">Które drzwi — wybieracie wy, nie kostka</h3>
+<p id="PI-05-102" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › Które drzwi — wybieracie wy, nie kostka">Na każdy postój przypada <strong>po kilka sprawdzonych lokali</strong>, a przy nich zapasowy. Jeśli w pierwszym jest pełno albo jest zamknięte — <strong>idziecie do następnego i nic się nie stało.</strong></p>
+<p id="PI-05-103" data-kind="akapit" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › Które drzwi — wybieracie wy, nie kostka"><strong>Mapa nigdy nie zmusza was do konkretnych drzwi.</strong></p>
+<hr>
+<h2 id="PI-05-104" data-kind="nagłówek" data-h="Zasady Gry › DWA RZUTY k6 NA KAŻDYM POSTOJU › Które drzwi — wybieracie wy, nie kostka">FURTKA</h2>
+<p id="PI-05-105" data-kind="akapit" data-h="Zasady Gry › FURTKA"><strong>Od piątego postoju</strong> na każdej stronie jest wydrukowane:</p>
+<div id="PI-05-106" data-kind="ramka" data-h="Zasady Gry › FURTKA" class="callout quote"><p><strong>Możecie ruszyć prosto do finału.</strong></p></div>
+<p id="PI-05-107" data-kind="akapit" data-h="Zasady Gry › FURTKA">To nie jest porażka. Postoje szósty i siódmy są <strong>zadaniami pobocznymi</strong> — historia kończy się tak samo dobrze bez nich. Jeśli jest zimno, jest mokro, ktoś jest zmęczony albo po prostu jest dobrze tam, gdzie jesteście — idźcie do finału i nie oglądajcie się.</p></section>
+<section class="page first-page" data-src="12 - Klasy i Bohaterowie.md"><span class="tag">drużyna</span><h1 id="PI-06-01" data-kind="nagłówek" data-h="">Klasy i Bohaterowie</h1>
+<h2 id="PI-06-02" data-kind="nagłówek" data-h="Klasy i Bohaterowie">CZTERY CECHY</h2>
+<p id="PI-06-03" data-kind="akapit" data-h="Klasy i Bohaterowie › CZTERY CECHY">W tej grze nie ma siły ani zręczności. Są cztery cechy i wszystkie są <strong>towarzyskie</strong>:</p>
+<table id="PI-06-04" data-kind="tabela" data-h="Klasy i Bohaterowie › CZTERY CECHY">
+<thead><tr><th>Cecha</th><th>O co chodzi</th></tr></thead>
+<tbody>
+<tr><td><strong>ODWAGA</strong></td><td>Zrobienie rzeczy, która jest wstydliwa. Podejście pierwszym. Wejście tam.</td></tr>
+<tr><td><strong>UROK</strong></td><td>Namówienie obcych ludzi na coś, na co nie mieli ochoty.</td></tr>
+<tr><td><strong>SPRYT</strong></td><td>Zagadki, blef, szybkie myślenie, wiedza o Piotrku i Karolinie.</td></tr>
+<tr><td><strong>KONDYCJA</strong></td><td>Picie, chodzenie pod górę i przetrwanie czwartej godziny.</td></tr>
+</tbody></table>
+<p id="PI-06-05" data-kind="akapit" data-h="Klasy i Bohaterowie › CZTERY CECHY">Bonus ze swojej karty dodajesz do <strong>k20</strong>. To wszystko, co musisz wiedzieć.</p>
+<hr>
+<h2 id="PI-06-06" data-kind="nagłówek" data-h="Klasy i Bohaterowie › CZTERY CECHY">TABELA ZBIORCZA</h2>
+<table id="PI-06-07" data-kind="tabela" data-h="Klasy i Bohaterowie › TABELA ZBIORCZA">
+<thead><tr><th></th><th><strong>Odwaga</strong></th><th><strong>Urok</strong></th><th><strong>Spryt</strong></th><th><strong>Kondycja</strong></th></tr></thead>
+<tbody>
+<tr><td><strong>Piotrek</strong> — Mag</td><td><strong>+3</strong></td><td><strong>+3</strong></td><td>+2</td><td><strong>−1</strong></td></tr>
+<tr><td><strong>Kazik</strong> — Bard</td><td>+2</td><td><strong>+3</strong></td><td>+1</td><td>+1</td></tr>
+<tr><td><strong>Mateusz</strong> — Łotrzyk</td><td><strong>−1</strong></td><td>+2</td><td><strong>+3</strong></td><td>0</td></tr>
+<tr><td><strong>Michał</strong> — Alchemik</td><td>0</td><td>0</td><td><strong>+3</strong></td><td>+2</td></tr>
+<tr><td><strong>Sebastian</strong> — Paladyn</td><td>+2</td><td>+1</td><td>0</td><td><strong>+3</strong></td></tr>
+</tbody></table>
+<p id="PI-06-08" data-kind="akapit" data-h="Klasy i Bohaterowie › TABELA ZBIORCZA"><strong>Jak z tego korzystać:</strong> kiedy pada zadanie, spójrz, jakiej cechy wymaga, i <strong>niech rzuca ten, kto jest w niej najlepszy</strong>. To gra kooperacyjna — nie ma punktów za to, że rzuciłeś sam.</p>
+<p id="PI-06-09" data-kind="akapit" data-h="Klasy i Bohaterowie › TABELA ZBIORCZA"><strong>Pomoc.</strong> Jeśli inny gracz aktywnie pomaga (trzyma, mówi, odwraca uwagę, śpiewa drugim głosem), rzucacie <strong>dwiema k20 i liczycie wyższy wynik</strong>. Prowadzący decyduje, czy pomoc była prawdziwa.</p>
+<hr>
+<div id="PI-06-10" data-kind="ramka" data-h="Klasy i Bohaterowie › TABELA ZBIORCZA" class="callout info"><p class="ct">ℹ JEDNA RZECZ O GIERMKU</p><p>Sebastian ma <strong>drugi tor punktowy</strong>, którego nie ma nikt inny. Na <strong>każdym postoju</strong> jeden z was uczy go czegoś konkretnego — jak się zamawia, kiedy milczeć, jak wyjść z kłopotów. <strong>Kazik o to zapyta.</strong> Miej co powiedzieć.</p></div>
+<hr>
+<h2 id="PI-06-11" data-kind="nagłówek" data-h="Klasy i Bohaterowie › TABELA ZBIORCZA">TAJNE MISJE</h2>
+<p id="PI-06-12" data-kind="akapit" data-h="Klasy i Bohaterowie › TAJNE MISJE">Każdy z was ma w książeczce <strong>jedną dodatkową stronę, której nie widzi nikt inny</strong>. Jest na niej prywatne zadanie na całą noc.</p>
+<p id="PI-06-13" data-kind="akapit" data-h="Klasy i Bohaterowie › TAJNE MISJE"><strong>Nie pokazujcie jej i nie mówcie, co na niej jest.</strong> Wszystkie zostają ujawnione naraz, przy stole, przy domykaniu rachunku — <strong>zanim padnie suma i zanim Giermek zostanie pasowany</strong>. Punkty z misji wchodzą do puli i potrafią przesądzić o tych stu pięćdziesięciu.</p>
+<p id="PI-06-14" data-kind="akapit" data-h="Klasy i Bohaterowie › TAJNE MISJE">Treści tajnych misji: Tajne Misje <em>(strona przygotowawcza — gracze jej nie dostają)</em>.</p></section>
+<section class="page first-page" data-src="21 - Karta - Piotrek.md"><span class="tag">twoja karta</span><h1 id="PI-07-01" data-kind="nagłówek" data-h="">PIOTREK — ARCYMAG KLAWIATURY</h1>
+<p id="PI-07-02" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY"><strong>Klasa:</strong> Mag · <strong>Kostki:</strong> niebieskie · <strong>Rola:</strong> Wybraniec</p>
+<div id="PI-07-03" data-kind="ramka" data-h="PIOTREK — ARCYMAG KLAWIATURY" class="callout quote"><p><em>Przez dwanaście lat siedział przed świecącym prostokątem i zaklinał świat literami, których nikt poza nim nie rozumie. Dzielnica Uczonych zna takich jak on i szanuje ich — ale dziś odebrała mu źródło mocy, wypchnęła na ulicę i kazała iść pod górę.</em></p>
+<p><em>Za piętnaście dni się żeni. Wszystko, co dziś zdobędziecie, zdobywacie dla niego i dla Karoliny.</em></p></div>
+<h2 id="PI-07-04" data-kind="nagłówek" data-h="PIOTREK — ARCYMAG KLAWIATURY">TWOJE CECHY</h2>
+<table id="PI-07-05" data-kind="tabela" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE CECHY">
+<thead><tr><th></th><th>Bonus</th><th></th></tr></thead>
+<tbody>
+<tr><td><strong>ODWAGA</strong></td><td><strong>+3</strong></td><td>Robienie rzeczy wstydliwych</td></tr>
+<tr><td><strong>UROK</strong></td><td><strong>+3</strong></td><td>Namawianie obcych</td></tr>
+<tr><td><strong>SPRYT</strong></td><td><strong>+2</strong></td><td>Zagadki, blef, wiedza</td></tr>
+<tr><td><strong>KONDYCJA</strong></td><td><strong>−1</strong></td><td>Picie, chodzenie, czwarta godzina</td></tr>
+</tbody></table>
+<p id="PI-07-06" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE CECHY"><strong>Jesteś jedynym graczem z dwiema trójkami.</strong> Jesteś też jedynym, który ma <strong>minus</strong> — dwanaście lat przed komputerem nie robi dobrze Kondycji. Pamiętaj o tym, kiedy o 21:30 będziemy wracać pod górę.</p>
+<p id="PI-07-07" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE CECHY"><strong>Zgłaszaj się do:</strong> wszystkiego, co wymaga <strong>Odwagi</strong> albo <strong>Uroku</strong>. Jesteś w tym najlepszy w drużynie razem z Kazikiem. <strong>Nie zgłaszaj się do:</strong> zadań na <strong>Kondycję</strong>. Poproś Sebastiana.</p>
+<div id="PI-07-08" data-kind="ramka" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE CECHY" class="callout quote"><h3>TWOJA ZDOLNOŚĆ: KRĄG WYGODY</h3>
+<p><strong>Raz na całą noc. Jeden jedyny raz.</strong></p>
+<p>Ogłaszasz odpoczynek. <strong>Cała drużyna musi natychmiast usiąść i wygodnie się napić.</strong> Nikt nie może odmówić, nikt nie może poganiać, nikt nie może powiedzieć „jeszcze tylko jeden postój".</p>
+<p>Trwa tyle, ile chcesz.</p>
+<p><strong>Masz to raz — więc wybierz moment.</strong> Najlepszy jest ten, w którym nikt inny nie ma odwagi powiedzieć, że już nie może.</p>
+<p><span class="box"></span> zużyte</p></div>
+<h2 id="PI-07-09" data-kind="nagłówek" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE CECHY">TWOJE MIKSTURY</h2>
+<p id="PI-07-10" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE MIKSTURY"><strong>Sebastian rozda ci twoje cztery butelki na pierwszym postoju, przy fontannie.</strong></p>
+<p id="PI-07-11" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE MIKSTURY">Każdej używasz <strong>raz na całą noc</strong>. Odhacz, kiedy zużyjesz.</p>
+<div id="PI-07-12" data-kind="ramka" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE MIKSTURY" class="callout quote"><p><strong>Mikstura działa dopiero wtedy, kiedy ją wypijesz.</strong> Samo ogłoszenie nie wystarcza.</p></div>
+<ul id="PI-07-13" data-kind="lista" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE MIKSTURY" class="checks"><li><span class="box"></span> <strong>Wino Uczonych</strong> <em>(małe białe wino)</em> — <strong>+3 do jednego rzutu.</strong> <strong>Pijesz ZANIM rzucisz.</strong> Po rzucie już nie działa.</li><li><span class="box"></span> <strong>Ogień Starego Jacka</strong> <em>(mała butelka Jacka)</em> — <strong>automatyczny sukces</strong>. <strong>Pijesz ZAMIAST rzutu</strong> — k20 w ogóle nie leci. Następny twój test ma <strong>−2</strong>.</li><li><span class="box"></span> <strong>Nektar Słońca</strong> <em>(soczek)</em> — <strong>anuluje jedną karę</strong> wymierzoną tobie. <strong>Pijesz PO ogłoszeniu kary, zamiast łyków z k4.</strong></li><li><span class="box"></span> <strong>Źródlana Łza</strong> <em>(woda)</em> — <strong>„JESZCZE JEDNO":</strong> wymuszasz <strong>dodatkowe zadanie</strong> na tym postoju, <strong>warte podwójnie</strong>, i <strong>nikt za nie nie pije</strong>. <strong>Pijesz, kiedy chcesz</strong> — także wtedy, gdy padło już „idziemy dalej".</li></ul>
+<h2 id="PI-07-14" data-kind="nagłówek" data-h="PIOTREK — ARCYMAG KLAWIATURY › TWOJE MIKSTURY">PAMIĘTAJ</h2>
+<p id="PI-07-15" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ"><strong>k20</strong> + bonus ≥ ST → udało się. <strong>k6</strong> = wybór. <strong>k4</strong> = kara, tyle łyków. Naturalna 20 → coś wspaniałego, +5 punktów. Naturalna 1 → karę bierze cała drużyna.</p>
+<p id="PI-07-16" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ"><strong>Zadanie robisz ZAWSZE. Kostka mówi tylko, jak wyszło — nie czy w ogóle.</strong></p>
+<table id="PI-07-17" data-kind="tabela" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ">
+<thead><tr><th></th><th>robisz zadanie</th><th>punkty</th><th>pijesz</th></tr></thead>
+<tbody>
+<tr><td><strong>sukces</strong></td><td>tak</td><td>pełna stawka</td><td>nie</td></tr>
+<tr><td><strong>porażka</strong></td><td><strong>tak, to samo</strong></td><td><strong>0</strong></td><td><strong>k4 łyków</strong></td></tr>
+</tbody></table>
+<p id="PI-07-18" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ">Miksturę albo pomoc zgłaszasz <strong>przed rzutem</strong>. Jeden rzut na zadanie — nie ma powtórek.</p>
+<p id="PI-07-19" data-kind="akapit" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ"><strong>Jesteś bohaterem mniej więcej połowy dzisiejszych zadań.</strong> Tak ma być. To twoja wyprawa.</p>
+<div id="PI-07-20" data-kind="ramka" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ" class="callout quote"><h3>OSTATNI PUNKT PODRÓŻY JEST TWÓJ</h3>
+<p>Wyprawa czwórki kończy się przy stole: 150 punktów, trzy Legendarne, pasowany Giermek.</p>
+<p><strong>Jeden punkt zostaje po tym wszystkim i na ten wchodzisz sam.</strong></p>
+<p>Nie ma tam punktów i <strong>nikt nie rzuci za ciebie</strong>. <strong>Miej pełne butelki na koniec wieczoru</strong> — to jedyna rada, jaką dostajesz, i jedyna, jaka ci się przyda.</p></div>
+<div id="PI-07-21" data-kind="ramka" data-h="PIOTREK — ARCYMAG KLAWIATURY › PAMIĘTAJ" class="callout quote"><p><strong>PIOTREK NIE BĘDZIE KODZIŁ W TEN DZIEŃ.</strong></p></div></section>
+<section class="page first-page" data-src="14 - Dzielnica Uczonych.md"><span class="tag">gdzie jesteśmy</span><h1 id="PI-08-01" data-kind="nagłówek" data-h="">Dzielnica Uczonych</h1>
+<h2 id="PI-08-02" data-kind="nagłówek" data-h="Dzielnica Uczonych">CZYM JEST TA DZIELNICA</h2>
+<p id="PI-08-03" data-kind="akapit" data-h="Dzielnica Uczonych › CZYM JEST TA DZIELNICA">Piąta dzielnica Paryża, na lewym brzegu rzeki. Osiemset lat temu przyszli tu studenci, bo po tej stronie było taniej, i już zostali. Uczyli się po łacinie na ulicy, więc ulice nazwano łacińskimi — i nazwa została, choć łacina dawno wyszła z użycia.</p>
+<p id="PI-08-04" data-kind="akapit" data-h="Dzielnica Uczonych › CZYM JEST TA DZIELNICA">W tej wyprawie nazywa się <strong>Dzielnica Uczonych</strong>. To dobre miejsce, żeby zdobyć Szacunki, bo mieszkają tu ludzie, którzy przez osiem wieków nie widzieli nic dziwniejszego niż pięciu Polaków z kostkami do gry.</p>
+<p id="PI-08-05" data-kind="akapit" data-h="Dzielnica Uczonych › CZYM JEST TA DZIELNICA"><strong>Cała wyprawa idzie z góry na dół.</strong> Zaczynacie na szczycie wzgórza, przy fontannie. Schodzicie targiem, potem między pomnikami, potem coraz węższymi uliczkami, aż do rzeki — i tam, pod najstarszym drzewem tego miasta, składacie przysięgę o zachodzie słońca.</p>
+<p id="PI-08-06" data-kind="akapit" data-h="Dzielnica Uczonych › CZYM JEST TA DZIELNICA">A potem <strong>wracacie pod górę</strong>, tą samą drogą, po ciemku, do tej samej fontanny. Bo tak się zamyka krąg.</p>
+<hr></section>
+<section class="page first-page" data-src="10 - Przepowiednia i Warunek Wyprawy.md"><span class="tag">przed wyjazdem</span><h1 id="PI-09-01" data-kind="nagłówek" data-h="">Przepowiednia i Warunek Wyprawy</h1>
+<h2 id="PI-09-02" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy">PRZEPOWIEDNIA</h2>
+<div id="PI-09-03" data-kind="ramka" data-h="Przepowiednia i Warunek Wyprawy › PRZEPOWIEDNIA" class="callout quote"><h1>PIOTREK NIE BĘDZIE KODZIŁ W TEN DZIEŃ</h1></div>
+<p id="PI-09-04" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PRZEPOWIEDNIA">To nie jest żart. To jest <strong>warunek wyprawy</strong>.</p>
+<p id="PI-09-05" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PRZEPOWIEDNIA">Przepowiednia wraca trzy razy w ciągu nocy:</p>
+<ol id="PI-09-06" data-kind="lista" data-h="Przepowiednia i Warunek Wyprawy › PRZEPOWIEDNIA"><li><strong>Na początku</strong> — jako omen, tutaj, przy fontannie.</li><li><strong>W środku</strong> — jako okrzyk. Każdy gracz może w dowolnym momencie krzyknąć ją na głos; cała drużyna musi odpowiedzieć chórem. Kto nie odpowie, pije.</li><li><strong>Na końcu</strong> — jako ostatnie zdanie wyprawy.</li></ol>
+<p id="PI-09-07" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PRZEPOWIEDNIA">Za trzecim razem nie będzie już okrzykiem. <strong>Za trzecim razem ktoś każe wam ją udowodnić</strong> — i nie będzie to nikt z was. Więcej nie zdradzimy.</p>
+<hr>
+<h2 id="PI-09-08" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy › PRZEPOWIEDNIA">KIM JESTEŚCIE</h2>
+<p id="PI-09-09" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › KIM JESTEŚCIE">Nie jesteście sobą. To znaczy — jesteście, ale w tej dzielnicy nosicie inne imiona.</p>
+<table id="PI-09-10" data-kind="tabela" data-h="Przepowiednia i Warunek Wyprawy › KIM JESTEŚCIE">
+<thead><tr><th>Kto</th><th>Kim jest w Dzielnicy</th></tr></thead>
+<tbody>
+<tr><td><strong>Piotrek</strong></td><td><strong>Arcymag Klawiatury</strong> — Wybraniec. To jego wyprawa i jego przepowiednia.</td></tr>
+<tr><td><strong>Kazik</strong></td><td><strong>Skald Podniebnych Szlaków</strong> — ten, który zwołał drużynę i trzyma mapę.</td></tr>
+<tr><td><strong>Mateusz</strong></td><td><strong>Cień z Mouffetard</strong> — ten, którego nikt nie widzi, dopóki sam nie zechce.</td></tr>
+<tr><td><strong>Michał</strong></td><td><strong>Mistrz Destylacji</strong> — ten, który wie, co jest w kieliszku, i który zna zasady.</td></tr>
+<tr><td><strong>Sebastian</strong></td><td><strong>Giermek Zakonu</strong> — najmłodszy. Niesie plecak. Zanim dojdziecie do ostatniego punktu, ma zostać pasowany.</td></tr>
+</tbody></table>
+<p id="PI-09-11" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › KIM JESTEŚCIE">Pełne karty postaci: Klasy i Bohaterowie.</p>
+<p id="PI-09-12" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › KIM JESTEŚCIE"><strong>Karolina Kuriata</strong> nie idzie z wami. Nie musi. Ona jest <strong>celem</strong> tej wyprawy — wszystko, co dziś zdobędziecie, zdobywacie dla domu, który ona i Piotrek zbudują 24 października.</p>
+<hr>
+<h2 id="PI-09-13" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy › KIM JESTEŚCIE">PO CO IDZIECIE</h2>
+<p id="PI-09-14" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE">Zbieracie <strong>Punkty Szacunków</strong>. Jedna wspólna pula dla całej drużyny — nie ma rywalizacji, nie ma drużyn, nie ma indywidualnego wyniku. Albo wygrywacie razem, albo nikt.</p>
+<p id="PI-09-15" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE">Szacunki są przeznaczone dla przyszłego domu Piotrka i Karoliny. Każdy punkt to jedna rzecz, której nowożeńcom nie zabraknie: odwagi, cierpliwości, przyjaciół gotowych przejść przez obce miasto dla jednego człowieka.</p>
+<div id="PI-09-16" data-kind="ramka" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE" class="callout quote"><h3>WARUNEK WYPRAWY</h3>
+<p><strong>Wyprawa drużyny kończy się sukcesem, jeśli:</strong></p>
+<ul><li>zdobędziecie <strong>150 Punktów Szacunków</strong>,</li><li>wykonacie co najmniej <strong>3 Legendarne Wyzwania</strong>,</li><li>a <strong>Giermek zostanie pasowany na rycerza</strong>.</li></ul>
+<p>Wszystkie trzy warunki. Nie dwa z trzech.</p>
+<p><strong>I wszystkie trzy — zanim dojdziecie do ostatniego punktu podróży.</strong></p></div>
+<h3 id="PI-09-17" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE">OSTATNI PUNKT PODRÓŻY</h3>
+<p id="PI-09-18" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE › OSTATNI PUNKT PODRÓŻY"><strong>Wasza wspólna wyprawa kończy się o jeden punkt wcześniej, niż myślicie.</strong> Punkty liczycie <strong>w drodze</strong>, pod górę, na trzech przystankach — po to, żeby na ostatnie miejsce dojść <strong>wiedząc, na czym stoicie</strong>.</p>
+<p id="PI-09-19" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE › OSTATNI PUNKT PODRÓŻY">Bo w ostatnim punkcie nie gra już drużyna.</p>
+<div id="PI-09-20" data-kind="ramka" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE › OSTATNI PUNKT PODRÓŻY" class="callout quote"><p><strong>Jeśli spełnicie warunek wyprawy, Piotrek stanie przed Ostatnim Progiem.</strong></p>
+<p>Rzuca sam. Wy stoicie z boku. I dopiero za tym progiem leży to, po co naprawdę tu przyszliście.</p>
+<p><strong>Co go tam czeka, wie jeden człowiek i nie jest nim Piotrek.</strong></p></div>
+<p id="PI-09-21" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE › OSTATNI PUNKT PODRÓŻY"><strong>Wszystko, co dziś zrobicie, robicie po to, żeby go tam wpuścili.</strong></p>
+<hr>
+<h2 id="PI-09-22" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy › PO CO IDZIECIE › OSTATNI PUNKT PODRÓŻY">CO SIĘ STANIE, JEŚLI SIĘ NIE UDA</h2>
+<p id="PI-09-23" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA">Nic strasznego. Przepowiednia wypełni się tak czy inaczej, bo Piotrek fizycznie nie ma dziś przy sobie klawiatury, a Karolina i tak powie „tak" — ta umowa jest podpisana od dwunastu lat i nie podlega rzutowi.</p>
+<p id="PI-09-24" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA">Dzielnica też się pod wami nie zapadnie. Stoi osiemset lat i widziała gorsze drużyny.</p>
+<p id="PI-09-25" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA"><strong>Stanie się natomiast rzecz znacznie gorsza.</strong></p>
+<div id="PI-09-26" data-kind="ramka" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA" class="callout quote"><p>Dwudziestego czwartego października, w Pałacu Łagów, gdzieś między drugim daniem a tortem, ktoś zapyta: <em>„no i jak było w tym Paryżu?"</em></p>
+<p>I zapadnie cisza.</p>
+<p>Ktoś powie, że fajnie. Ktoś dorzuci, że było ciepło jak na październik. Ktoś sięgnie po telefon, żeby pokazać zdjęcie — i okaże się, że nikt go nie zrobił, bo wszyscy byli zajęci mówieniem, że zaraz je zrobią.</p></div>
+<p id="PI-09-27" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA"><strong>I to jest jedyna prawdziwa stawka tego wieczoru.</strong> Nie punkty. Nie pieczęć. Nie pasowanie.</p>
+<p id="PI-09-28" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA">Chodzi o to, żeby za piętnaście dni ktoś przy tamtym stole przerwał komuś w połowie zdania i powiedział: <em>„czekaj, czekaj — najpierw musisz usłyszeć, co Mateusz zrobił na tej arenie."</em></p>
+<p id="PI-09-29" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA"><strong>Wtedy wyprawa się udała.</strong></p>
+<hr>
+<h2 id="PI-09-30" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy › CO SIĘ STANIE, JEŚLI SIĘ NIE UDA">KTO PROWADZI I KTO MOŻE GO ZATRZYMAĆ</h2>
+<p id="PI-09-31" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › KTO PROWADZI I KTO MOŻE GO ZATRZYMAĆ"><strong>Trzy role, trzy osoby — i żadna nie może przebić pozostałych.</strong></p>
+<table id="PI-09-32" data-kind="tabela" data-h="Przepowiednia i Warunek Wyprawy › KTO PROWADZI I KTO MOŻE GO ZATRZYMAĆ">
+<thead><tr><th>Kto</th><th>Rola</th><th>Co znaczy</th></tr></thead>
+<tbody>
+<tr><td><strong>Kazik</strong></td><td><strong>Mistrz Gry</strong></td><td>Prowadzi narrację, ogłasza zadania, trzyma mapę i kartę wyniku.</td></tr>
+<tr><td><strong>Michał</strong></td><td><strong>Sędzia</strong></td><td>Rozstrzyga <strong>spory o zasady</strong>. Jego decyzja jest ostateczna — także wobec Kazika.</td></tr>
+<tr><td><strong>Sebastian</strong></td><td><strong>Weto</strong></td><td>Odrzuca dowolne zadanie, bez tłumaczenia, także wobec Kazika. <strong>Ma jedno weto na całą noc</strong> — niewykorzystane jest warte 15 punktów.</td></tr>
+</tbody></table>
+<p id="PI-09-33" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › KTO PROWADZI I KTO MOŻE GO ZATRZYMAĆ">Kazik opowiada, Michał sądzi, Sebastian może wszystko zatrzymać. <strong>Nikt nie ma pełnej władzy</strong> i o to chodzi.</p>
+<p id="PI-09-34" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › KTO PROWADZI I KTO MOŻE GO ZATRZYMAĆ">Zasady w całości: Zasady Gry. Zasady bezpieczeństwa, które obowiązują ponad wszystkimi innymi: Bezpieczeństwo i Weto.</p>
+<hr>
+<h2 id="PI-09-35" data-kind="nagłówek" data-h="Przepowiednia i Warunek Wyprawy › KTO PROWADZI I KTO MOŻE GO ZATRZYMAĆ">PROLOG JEST OSOBNYM ROZDZIAŁEM</h2>
+<p id="PI-09-36" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PROLOG JEST OSOBNYM ROZDZIAŁEM"><strong>Tę stronę czytacie przed wyjazdem, na spokojnie.</strong> Nic z niej nie czyta się przy fontannie.</p>
+<p id="PI-09-37" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PROLOG JEST OSOBNYM ROZDZIAŁEM">O 15:00, kiedy staniecie już na placu, zaczyna się <strong>osobny rozdział</strong>: prolog czytany na głos i przedstawienie się pięciu postaci. Jest w tej samej książeczce, kilka stron dalej.</p>
+<p id="PI-09-38" data-kind="akapit" data-h="Przepowiednia i Warunek Wyprawy › PROLOG JEST OSOBNYM ROZDZIAŁEM"><strong>→ Prolog i Przedstawienie Postaci</strong></p></section>
+<section class="page first-page" data-src="15 - Prolog i Przedstawienie Postaci.md"><span class="tag">15:00 &middot; na głos</span><h1 id="PI-10-01" data-kind="nagłówek" data-h="">Prolog i Przedstawienie Postaci</h1>
+<p id="PI-10-02" data-kind="akapit" data-h="Prolog i Przedstawienie Postaci"><strong>Place de la Contrescarpe · 15:00 · czyta KAZIK · wszyscy stoją</strong></p>
+<p id="PI-10-03" data-kind="akapit" data-h="Prolog i Przedstawienie Postaci">To jest <strong>pierwsza scena wieczoru</strong> i jedyna, w której nikt nie rzuca kostką. Trwa <strong>dziesięć minut</strong>: pięć na prolog, pięć na przedstawienie się. Potem schodzicie z tego wzgórza.</p>
+<hr>
+<h2 id="PI-10-04" data-kind="nagłówek" data-h="Prolog i Przedstawienie Postaci">PROLOG — czytaj na głos, powoli</h2>
+<div id="PI-10-05" data-kind="ramka" data-h="Prolog i Przedstawienie Postaci › PROLOG — czytaj na głos, powoli" class="callout quote"><p>Jest piątek, dziewiątego dnia października roku 2026. Za piętnaście dni, w Pałacu Łagów, Piotrek Szkiecin poślubi Karolinę Kuriatę — kobietę, którą poznał dwanaście lat temu na studenckiej imprezie we Wrocławiu i której od tamtej pory nie udało mu się zgubić.</p>
+<p>Ale zanim to się stanie, trzeba spłacić stary dług. Bo w Dzielnicy Uczonych — w tej plątaninie wąskich ulic, które schodzą od tej fontanny aż do rzeki — mówi się od wieków, że nikt nie wchodzi w małżeństwo z pustymi rękami. Trzeba przynieść <strong>Szacunki</strong>. Nie da się ich kupić ani pożyczyć. Zdobywa się je w jeden dzień, na własnych nogach, wśród obcych ludzi mówiących obcym językiem.</p>
+<p>Stoicie przy <strong>Fontannie Wyruszenia</strong>, na samym szczycie wzgórza. Stąd wszystko prowadzi w dół: targ tysiąca kramów, rzymska arena, krypta bohaterów, biblioteka zaginionych słów, odbudowana katedra i wreszcie rzeka. A kiedy słońce zajdzie i przysięga zostanie złożona pod najstarszym drzewem tego miasta — wrócicie tutaj. Pod tę samą fontannę. Żeby zamknąć krąg.</p>
+<p>I wtedy okaże się, że krąg zamyka się dla czterech z was, a dla jednego jeszcze nie.</p>
+<p>Jest was pięciu. Macie cztery godziny. I macie jedną przepowiednię.</p></div>
+<hr>
+<h2 id="PI-10-06" data-kind="nagłówek" data-h="Prolog i Przedstawienie Postaci › PROLOG — czytaj na głos, powoli">PRZEDSTAWIENIE POSTACI — teraz, zanim ruszycie</h2>
+<div id="PI-10-07" data-kind="ramka" data-h="Prolog i Przedstawienie Postaci › PRZEDSTAWIENIE POSTACI — teraz, zanim ruszycie" class="callout imp"><p class="ct">‼ KAZIK — POWIEDZ TO I USIĄDŹ Z POWROTEM</p><p><em>„Zanim zejdziemy z tego wzgórza — nie jesteśmy już sobą. Każdy z was mówi teraz, kim jest.</em> <em>Po kolei, na stojąco, jedno przedstawienie. Nikt nikomu nie przerywa."</em></p>
+<p><strong>Pięć minut na wszystkich pięciu.</strong> Minuta na osobę. Nie dłużej — najlepsze jest dopiero przed wami, a plac o piętnastej jest jeszcze pusty i szkoda go na przemówienia.</p>
+<p><strong>Kolejność jest ustalona i ma znaczenie:</strong></p>
+<p><strong>1. Kazik → 2. Michał → 3. Mateusz → 4. Sebastian → 5. Piotrek.</strong></p>
+<p>Ty zaczynasz, bo to ty ich zwołałeś. <strong>Piotrek mówi ostatni</strong>, bo zaraz po jego zdaniu idzie okrzyk i schodzicie z góry.</p>
+<p><strong>Zapowiedz kolejność na głos, zanim ktokolwiek zacznie.</strong> Potem już nic nie mówisz.</p></div>
+<div id="PI-10-08" data-kind="ramka" data-h="Prolog i Przedstawienie Postaci › PRZEDSTAWIENIE POSTACI — teraz, zanim ruszycie" class="callout imp"><p class="ct">‼ KAŻDY MA W KSIĄŻECZCE TYLKO SWÓJ TEKST — TAKŻE TY</p><p>Na następnej stronie jest <strong>jedno</strong> przedstawienie: twoje. <strong>Pozostałej czwórki tam nie ma i nie ma jej celowo.</strong></p>
+<p>Cudzych tekstów nie czytasz oczami — <strong>słuchasz ich raz, na placu, na żywo.</strong> To jedyny moment tego wieczoru, w którym pięciu ludzi mówi o sobie, a czterech innych po prostu słucha.</p>
+<p><strong>Nikt nie zagląda nikomu przez ramię.</strong> Nie ma czego podglądać.</p></div>
+<hr>
+<h3 id="PI-10-09" data-kind="nagłówek" data-h="Prolog i Przedstawienie Postaci › PRZEDSTAWIENIE POSTACI — teraz, zanim ruszycie">5 · PIOTREK — ARCYMAG KLAWIATURY</h3>
+<div id="PI-10-10" data-kind="ramka" data-h="Prolog i Przedstawienie Postaci › PRZEDSTAWIENIE POSTACI — teraz, zanim ruszycie › 5 · PIOTREK — ARCYMAG KLAWIATURY" class="callout quote"><p><em>„Piotrek. <strong>Arcymag Klawiatury</strong>.</em></p>
+<p><em>Przez dwanaście lat siedziałem przed świecącym prostokątem i zaklinałem świat literami, których nikt poza mną nie rozumie. Dzielnica Uczonych zna takich jak ja i szanuje ich — ale dziś odebrała mi źródło mocy, wypchnęła na ulicę i kazała iść pod górę.</em></p>
+<p><em>Mam <strong>Odwagę plus trzy i Urok plus trzy</strong> — jako jedyny mam dwie trójki. I jako jedyny mam minus: <strong>Kondycja minus jeden</strong>, bo dwanaście lat przed komputerem nie robi dobrze nogom. Przypomnijcie mi to o dwudziestej pierwszej trzydzieści, jak będziemy wracać pod górę.</em></p>
+<p><em>Raz tej nocy mogę ogłosić odpoczynek i <strong>nikt z was nie będzie miał prawa mnie poganiać</strong>.</em></p>
+<p><em>Za piętnaście dni się żenię.</em></p>
+<p><em>Wszystko, co dziś zdobędziemy, zdobywamy dla domu, którego jeszcze nie ma."</em></p></div>
+<hr>
+<h2 id="PI-10-11" data-kind="nagłówek" data-h="Prolog i Przedstawienie Postaci › PRZEDSTAWIENIE POSTACI — teraz, zanim ruszycie › 5 · PIOTREK — ARCYMAG KLAWIATURY">TO JEST RUSZTOWANIE, A NIE SCENARIUSZ</h2>
+<div id="PI-10-12" data-kind="ramka" data-h="Prolog i Przedstawienie Postaci › TO JEST RUSZTOWANIE, A NIE SCENARIUSZ" class="callout tip"><p class="ct">▸ ZANIM PRZECZYTASZ SWÓJ TEKST — TYLE WOLNO CI Z NIM ZROBIĆ</p><p>Ten tekst jest tu po to, żeby nikt nie stał i nie zastanawiał się, co powiedzieć. <strong>Nie musisz czytać go dosłownie</strong> i nikt nie sprawdza, czy się trzymasz kartki.</p>
+<ul><li><strong>Zmieniaj, co chcesz.</strong> Skróć, jeśli za długie. Powiedz własnymi słowami.</li><li><strong>Dorzuć zdanie od siebie</strong> — czegoś, czego w tekście nie ma. To jest najlepsza rzecz, jaką możesz z tą stroną zrobić.</li><li><strong>Zagraj to albo przeczytaj na płasko.</strong> Głos, akcent, powaga, wygłup — wszystkie wersje są dobre i żadna nie jest bardziej „poprawna".</li></ul>
+<p><strong>Trzy rzeczy warto zostawić</strong>, bo reszta wieczoru z nich korzysta: <strong>imię i tytuł w Dzielnicy · jedna cecha, w której jesteś dobry, i jedna, w której jesteś słaby · to, co umiesz zrobić raz na całą noc.</strong></p>
+<p>A jeśli ktoś chce dorzucić <strong>jedno zdanie o tym, dlaczego jego postać w ogóle poszła dziś z Piotrkiem</strong> — nie ma tego w tekście celowo. To zdanie należy do was.</p></div>
+<hr>
+<h2 id="PI-10-13" data-kind="nagłówek" data-h="Prolog i Przedstawienie Postaci › TO JEST RUSZTOWANIE, A NIE SCENARIUSZ">PIERWSZE SŁOWA WYPRAWY</h2>
+<p id="PI-10-14" data-kind="akapit" data-h="Prolog i Przedstawienie Postaci › PIERWSZE SŁOWA WYPRAWY">Kiedy Piotrek skończy, <strong>nie rób przerwy</strong>. Wszyscy podnoszą to, co mają w ręku, i mówią razem:</p>
+<div id="PI-10-15" data-kind="ramka" data-h="Prolog i Przedstawienie Postaci › PIERWSZE SŁOWA WYPRAWY" class="callout quote"><h3>PIOTREK NIE BĘDZIE KODZIŁ W TEN DZIEŃ</h3></div>
+<p id="PI-10-16" data-kind="akapit" data-h="Prolog i Przedstawienie Postaci › PIERWSZE SŁOWA WYPRAWY"><strong>Potem schodzicie z tego wzgórza.</strong></p>
+<p id="PI-10-17" data-kind="akapit" data-h="Prolog i Przedstawienie Postaci › PIERWSZE SŁOWA WYPRAWY"><strong>→ wracasz do Fontanna Wyruszenia, sekcja LIST STAREGO KARTOGRAFA</strong></p></section>
+<section class="page first-page" data-src="(generowane) druk/make_props.py · STATS/ABILITY/MIKSTURY + 21 - Karta - Piotrek.md"><span class="tag">karta na stół</span><h1 id="PI-11-01" data-kind="nagłówek" data-h="">Twoja karta postaci</h1><div id="PI-11-02" data-kind="karta postaci" data-h="Twoja karta postaci" class="pcard"><div class="hdr"><div class="nm">Piotrek</div><div class="kl">Arcymag Klawiatury</div><div class="role">Wybraniec — bohater połowy dzisiejszych scen &middot; kostki niebieskie</div></div><div class="stats"><div class="stat best"><div class="n">ODWAGA</div><div class="v">+3</div></div><div class="stat"><div class="n">UROK</div><div class="v">+3</div></div><div class="stat"><div class="n">SPRYT</div><div class="v">+2</div></div><div class="stat worst"><div class="n">KONDYCJA</div><div class="v">−1</div></div></div><div class="abil"><div class="t">KRĄG WYGODY</div><div class="d">RAZ NA CAŁĄ NOC. Ogłaszasz odpoczynek — cała drużyna musi natychmiast usiąść i wygodnie się napić. Nikt nie może odmówić ani poganiać. Trwa tyle, ile chcesz. Masz to raz, więc wybierz moment.</div><div class="u"><span class="box"></span>zużyte</div></div><div class="mik"><div class="h">Mikstury — każda raz na noc</div><div class="row"><span class="box"></span><strong>Wino Uczonych</strong> <span style="color:#6f5d47">(małe białe wino)</span> — +3 do rzutu &middot; <b>wypij ZANIM rzucisz</b></div><div class="row"><span class="box"></span><strong>Ogień Starego Jacka</strong> <span style="color:#6f5d47">(mała butelka)</span> — auto-sukces &middot; <b>wypij ZAMIAST rzutu</b>; następny test −2</div><div class="row"><span class="box"></span><strong>Nektar Słońca</strong> <span style="color:#6f5d47">(soczek)</span> — kasuje karę &middot; <b>wypij ZAMIAST łyków z k4</b></div><div class="row"><span class="box"></span><strong>Źródlana Łza</strong> <span style="color:#6f5d47">(woda)</span> — <b>&bdquo;jeszcze jedno&rdquo;</b> &middot; dodatkowe zadanie, &times;2 punkty, nikt nie pije</div></div><div class="pfoot">k20 + bonus &ge; ST &middot; k6 = wybór &middot; k4 = kara (łyki) &middot; nat 20 = +5 &middot; nat 1 = piją wszyscy<br>Zadanie robisz <strong>zawsze</strong> — sukces = punkty, <strong>porażka = 0 punktów i k4 łyków, scena i tak się dzieje</strong>.</div></div></section>
+<section class="page first-page" data-src="20 - Tajne Misje.md"><span class="tag">tylko dla ciebie</span><h1 id="PI-12-01" data-kind="nagłówek" data-h="">Twoja Tajna Misja</h1><p id="PI-12-02" data-kind="akapit" data-h="Twoja Tajna Misja" style="font-family:Herculanum,Georgia,serif;font-size:13pt;text-align:center;margin:-.2em 0 .6em;color:var(--accent)">Ręka Arcymaga</p><p id="PI-12-03" data-kind="akapit" data-h="Twoja Tajna Misja" class="secret-warn">NIE POKAZUJ TEJ STRONY NIKOMU</p><div id="PI-12-04" data-kind="tajna misja" data-h="Twoja Tajna Misja" class="secret"><div class="callout quote"><p><strong>Twoja tajna misja</strong></p>
+<p>Przez dwanaście lat pisałeś wyłącznie na klawiaturze. Dziś Dzielnica odebrała ci źródło mocy — ale <strong>nie odebrała ci pisania</strong>. Odebrała ci tylko sposób.</p>
+<p><strong>Pięć razy tej nocy, w pięciu różnych miejscach, napiszesz Karolinie jedno zdanie. Ręcznie.</strong></p>
+<p>Trzy zasady i wszystkie trzy są twarde:</p>
+<ol><li><strong>Nigdy na telefonie.</strong> Ani razu, ani na próbę, ani „żeby przepisać potem".</li><li><strong>Na czymś, co należy do tego miejsca</strong> — podkładka spod kufla, serwetka, paragon, bilet, róg karty dań, opakowanie po czymś, co tam zjadłeś. Nie na kartce przyniesionej z hotelu.</li><li><strong>Długopis pożyczasz od kogoś spoza drużyny.</strong> Barman, kelner, obcy przy stoliku. Nie swój, nie od chłopaków, nie od Kazika.</li></ol>
+<p><strong>3 punkty za każde zdanie. Razem 15.</strong></p>
+<p><strong>Nikt tego nie przeczyta.</strong> Nie dziś, nie przy stole, nigdy. Te pięć karteluszków ma jednego adresata i ona nie idzie dziś z wami.</p>
+<p>Chowaj je do jednej kieszeni. Nie mów, co robisz — a jak ktoś zapyta, po co ci długopis, wymyśl powód.</p></div></div><p id="PI-12-05" data-kind="akapit" data-h="Twoja Tajna Misja" style="margin-top:1em;font-size:10pt"><em>Ujawniasz ją dopiero przy finałowym podliczeniu, w La Contrescarpe — razem z pozostałą czwórką.</em></p></section>
+
+<div id="warn" hidden>Przeglądarka nie pozwala tu nic zapisać (plik otwarty jako
+  <code>file://</code>). Uwagi żyją tylko do zamknięcia karty — <b>eksportuj je, zanim
+  zamkniesz</b>. Trwały zapis działa, jeśli otworzysz tę stronę z lokalnego serwera.</div>
+<div id="hint">Dotknij bloku, który chcesz skomentować &nbsp;·&nbsp; <u id="hcancel">anuluj</u></div>
+<div id="bar">
+  <span id="cnt">0 uwag</span>
+  <button id="add" class="pri">＋ Uwaga</button>
+  <button id="list">Lista</button>
+  <button id="copy">Kopiuj</button>
+  <button id="dl">.md</button>
+  <button id="more">⋯</button>
+</div>
+<div id="veil" hidden></div>
+<div id="sheet" hidden>
+  <div class="meta"><span id="sid"></span> · <span id="ssrc"></span></div>
+  <blockquote id="sq"></blockquote>
+  <textarea id="stx" placeholder="Co jest nie tak / co zmienić?"></textarea>
+  <div class="btns">
+    <button id="sdel" class="del">Usuń</button><span class="sp"></span>
+    <button id="scancel">Anuluj</button><button id="ssave" class="pri">Zapisz</button>
+  </div>
+</div>
+<div id="panel" hidden></div>
+<div id="toast" hidden></div>
+<input id="fjson" type="file" accept="application/json,.json" hidden>
+
+<script>
+(function () {
+"use strict";
+var DOC = {"key": "piotrek", "name": "Piotrek", "prefix": "PI", "file": "ksiazeczka-piotrek.html", "built": "2026-08-01 22:23"};
+var KEY = 'owp-review-' + DOC.key;
+var notes = [], pend = null, lastSel = null, editing = null, persists = true;
+
+// ---------------------------------------------------------------- storage
+function load() {
+  try { notes = JSON.parse(localStorage.getItem(KEY) || '[]'); }
+  catch (e) { notes = []; persists = false; }
+}
+function save() {
+  try { localStorage.setItem(KEY, JSON.stringify(notes)); }
+  catch (e) { persists = false; document.getElementById('warn').hidden = false; }
+  render();
+}
+
+// ---------------------------------------------------------------- geometry
+// offsets are measured against block.textContent, which nothing we add ever
+// changes: the coordinate chips are pseudo-elements and <mark> carries no text
+function blockOf(node) {
+  var el = node && node.nodeType === 1 ? node : node && node.parentElement;
+  while (el && !(el.id && el.parentElement &&
+                 el.parentElement.classList.contains('page'))) el = el.parentElement;
+  return el;
+}
+function offsetsOf(blk, range) {
+  var w = document.createTreeWalker(blk, NodeFilter.SHOW_TEXT), acc = 0, n;
+  var s = -1, e = -1;
+  while ((n = w.nextNode())) {
+    if (n === range.startContainer) s = acc + range.startOffset;
+    if (n === range.endContainer) e = acc + range.endOffset;
+    acc += n.nodeValue.length;
+  }
+  if (s < 0) s = 0;
+  if (e < 0) e = acc;
+  var a = Math.min(s, e), b = Math.max(s, e), t = blk.textContent;
+  while (a < b && /\s/.test(t[a])) a++;
+  while (b > a && /\s/.test(t[b - 1])) b--;
+  return { start: a, end: b };
+}
+// wrap each text node of the range on its own. lifting the range out with
+// extractContents would work for a sentence and quietly dismember a table the
+// moment a selection crossed a cell — and it crosses <strong> constantly
+function wrapRange(r, nid) {
+  var nodes = [], root = r.commonAncestorContainer;
+  if (root.nodeType === 3) nodes = [root];
+  else {
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), n;
+    while ((n = w.nextNode())) if (r.intersectsNode(n)) nodes.push(n);
+  }
+  nodes.forEach(function (t) {
+    var s = (t === r.startContainer) ? r.startOffset : 0;
+    var e = (t === r.endContainer) ? r.endOffset : t.nodeValue.length;
+    if (e <= s) return;
+    var mid = t.splitText(s);
+    mid.splitText(e - s);
+    var mk = document.createElement('mark');
+    mk.className = 'hl'; mk.setAttribute('data-nid', nid);
+    mid.parentNode.replaceChild(mk, mid); mk.appendChild(mid);
+  });
+}
+function rangeFrom(blk, start, end) {
+  var w = document.createTreeWalker(blk, NodeFilter.SHOW_TEXT), acc = 0, n;
+  var r = document.createRange(), open = false;
+  while ((n = w.nextNode())) {
+    var len = n.nodeValue.length;
+    if (!open && acc + len > start) { r.setStart(n, start - acc); open = true; }
+    if (acc + len >= end) { if (!open) return null; r.setEnd(n, end - acc); return r; }
+    acc += len;
+  }
+  return null;
+}
+
+// a table read as one run-on string helps nobody; give the exporter the shape back
+function blockText(el) {
+  var i, out;
+  if (el.tagName === 'TABLE') {
+    out = [];
+    for (i = 0; i < el.rows.length; i++) {
+      out.push('| ' + [].map.call(el.rows[i].cells, function (c) {
+        return c.textContent.replace(/\s+/g, ' ').trim();
+      }).join(' | ') + ' |');
+    }
+    return out.join('\n');
+  }
+  if (el.tagName === 'UL' || el.tagName === 'OL') {
+    out = [];
+    for (i = 0; i < el.children.length; i++) {
+      out.push((el.tagName === 'OL' ? (i + 1) + '. ' : '- ') +
+               el.children[i].textContent.replace(/\s+/g, ' ').trim());
+    }
+    return out.join('\n');
+  }
+  return el.textContent.replace(/\s+/g, ' ').trim();
+}
+function srcOf(blk) {
+  var p = blk.closest('.page');
+  return (p && p.getAttribute('data-src')) || '';
+}
+function idxOf(blk) {
+  var m = /-(\d+)-(\d+)$/.exec(blk.id);
+  return m ? { page: +m[1], idx: +m[2] } : { page: 0, idx: 0 };
+}
+
+// ---------------------------------------------------------------- capture
+function cellOf(node) {
+  var el = node.nodeType === 1 ? node : node.parentElement;
+  while (el && el.tagName !== 'TD' && el.tagName !== 'TH') el = el.parentElement;
+  return el;
+}
+function spanOf(blk, first, last) {
+  var w = document.createTreeWalker(blk, NodeFilter.SHOW_TEXT), acc = 0, n, s = -1, e = -1;
+  while ((n = w.nextNode())) {
+    if (s < 0 && first.contains(n)) s = acc;
+    if (last.contains(n)) e = acc + n.nodeValue.length;
+    acc += n.nodeValue.length;
+  }
+  return { start: s < 0 ? 0 : s, end: e < 0 ? acc : e };
+}
+function rowText(tr) {
+  return '| ' + [].map.call(tr.cells, function (c) {
+    return c.textContent.replace(/\s+/g, ' ').trim();
+  }).join(' | ') + ' |';
+}
+function captureSelection() {
+  var sel = window.getSelection();
+  if (!sel || sel.isCollapsed || !sel.rangeCount) return null;
+  var r = sel.getRangeAt(0), blk = blockOf(r.startContainer);
+  if (!blk) return null;
+  var o = offsetsOf(blk, r), disp = null;
+
+  // a table's textContent runs the cells together, so a drag across two of them
+  // quotes back gibberish. snap that case to the rows it touched instead
+  if (blk.tagName === 'TABLE') {
+    var c1 = cellOf(r.startContainer), c2 = cellOf(r.endContainer);
+    if (!c1 || c1 !== c2) {
+      var hit = [].filter.call(blk.rows, function (tr) { return r.intersectsNode(tr); });
+      if (hit.length) {
+        o = spanOf(blk, hit[0], hit[hit.length - 1]);
+        disp = hit.map(rowText).join('\n');
+      }
+    }
+  }
+  var quote = blk.textContent.slice(o.start, o.end);
+  if (!quote.trim()) return null;
+  var k = idxOf(blk);
+  return { blk: blk.id, src: srcOf(blk), sec: blk.getAttribute('data-h') || '',
+           kind: blk.getAttribute('data-kind') || 'blok', page: k.page, idx: k.idx,
+           whole: false, start: o.start, end: o.end,
+           // `quote` re-finds the anchor after a rebuild; `disp` is what a human reads
+           quote: quote, disp: disp || quote.replace(/\s+/g, ' ').trim(),
+           ctx: blockText(blk) };
+}
+function fromBlock(blk) {
+  var k = idxOf(blk), t = blockText(blk);
+  return { blk: blk.id, src: srcOf(blk), sec: blk.getAttribute('data-h') || '',
+           kind: blk.getAttribute('data-kind') || 'blok', page: k.page, idx: k.idx,
+           whole: true, start: 0, end: 0, quote: t, disp: t, ctx: t };
+}
+
+// ---------------------------------------------------------------- rendering
+function render() {
+  var marks = document.querySelectorAll('mark.hl'), i, m, p;
+  for (i = 0; i < marks.length; i++) {
+    m = marks[i]; p = m.parentNode;
+    while (m.firstChild) p.insertBefore(m.firstChild, m);
+    p.removeChild(m); p.normalize();
+  }
+  var noted = document.querySelectorAll('[data-noted]');
+  for (i = 0; i < noted.length; i++) noted[i].removeAttribute('data-noted');
+
+  notes.forEach(function (n) {
+    if (!n.blk) return;
+    var el = document.getElementById(n.blk);
+    if (!el) { n.orphan = true; return; }
+    n.orphan = false;
+    el.setAttribute('data-noted', '1');
+    if (n.whole) return;
+    var t = el.textContent;
+    if (t.slice(n.start, n.end) !== n.quote) {
+      var at = t.indexOf(n.quote);          // the block moved under the note; re-anchor
+      if (at < 0) { n.orphan = true; return; }
+      n.start = at; n.end = at + n.quote.length;
+    }
+    var r = rangeFrom(el, n.start, n.end);
+    if (r) wrapRange(r, n.nid);
+  });
+  document.getElementById('cnt').textContent = notes.length + ' ' + plural(notes.length);
+}
+function plural(n) {
+  if (n === 1) return 'uwaga';
+  var d = n % 10, s = n % 100;
+  return (d >= 2 && d <= 4 && !(s >= 12 && s <= 14)) ? 'uwagi' : 'uwag';
+}
+
+// ---------------------------------------------------------------- the sheet
+function openSheet(anchor, note) {
+  editing = note || null; pend = anchor || null;
+  var a = note || anchor;
+  document.getElementById('sid').textContent = a.blk || (DOC.prefix + '-OGÓLNE');
+  document.getElementById('ssrc').textContent =
+    (a.src || '(cała książeczka)') + (a.sec ? ' › ' + a.sec : '');
+  var q = document.getElementById('sq');
+  q.textContent = (a.disp || a.quote) || '(uwaga ogólna — nie dotyczy żadnego bloku)';
+  q.hidden = false;
+  document.getElementById('stx').value = note ? note.comment : '';
+  document.getElementById('sdel').style.display = note ? '' : 'none';
+  document.getElementById('veil').hidden = false;
+  document.getElementById('sheet').hidden = false;
+  setTimeout(function () { document.getElementById('stx').focus(); }, 60);
+}
+function closeSheet() {
+  document.getElementById('sheet').hidden = true;
+  document.getElementById('veil').hidden = true;
+  editing = null; pend = null;
+}
+function saveSheet() {
+  var txt = document.getElementById('stx').value.trim();
+  if (!txt) { closeSheet(); return; }
+  if (editing) { editing.comment = txt; editing.ts = Date.now(); }
+  else if (pend) {
+    pend.nid = Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+    pend.comment = txt; pend.ts = Date.now();
+    notes.push(pend);
+  }
+  closeSheet();
+  var s = window.getSelection(); if (s) s.removeAllRanges();
+  lastSel = null;
+  save(); toast('Zapisano');
+}
+
+// ---------------------------------------------------------------- the export
+function qb(t) {
+  return String(t).split('\n').map(function (l) { return '> ' + l; }).join('\n');
+}
+function record(n) {
+  var L = ['---'];
+  L.push('id: ' + (n.blk || DOC.prefix + '-OGÓLNE'));
+  L.push('plik: ' + (n.src || '(cała książeczka)'));
+  if (n.sec) L.push('sekcja: ' + n.sec);
+  L.push('zakres: ' + (n.blk ? (n.whole ? 'cały blok' : 'fragment') + ' — ' + n.kind
+                             : 'uwaga ogólna'));
+  if (n.orphan) L.push('uwaga-techniczna: kotwica nieaktualna — blok zmienił się po komentarzu');
+  var shown = n.disp || n.quote;
+  if (shown) { L.push('tekst:'); L.push(qb(shown)); }
+  if (n.ctx && n.ctx !== shown) {
+    var c = n.ctx.length > 2200 ? n.ctx.slice(0, 2200) + ' […]' : n.ctx;
+    L.push('kontekst:'); L.push(qb(c));
+  }
+  var t = (n.comment || '').trim();
+  if (t.indexOf('\n') >= 0) { L.push('comment:'); L.push(qb(t)); }
+  else L.push('comment: ' + t);
+  L.push('---');
+  return L.join('\n');
+}
+function buildMd() {
+  var L = [], now = stamp().replace(/-(\d\d)(\d\d)$/, ' $1:$2');   // local, like the build stamp
+  L.push('# Uwagi do książeczki — ' + DOC.name);
+  L.push('');
+  L.push('- książeczka: `druk/' + DOC.file + '` (build ' + DOC.built + ')');
+  L.push('- wyeksportowano: ' + now + ' · ' + notes.length + ' ' + plural(notes.length));
+  L.push('');
+  L.push('## Co z tym zrobić');
+  L.push('');
+  L.push('Pliki HTML w `druk/` są **generowane** — nie edytuj ich. Źródłem są notatki `.md` w');
+  L.push('`obsidian-vault/PiotrkaKawalerski/Ostatnia Wyprawa Piotrka/`. Popraw notatkę wskazaną');
+  L.push('w polu `plik`, a potem przebuduj: `python3 "…/druk/make_booklets.py"`.');
+  L.push('');
+  L.push('Każda uwaga to jeden rekord między liniami `---`:');
+  L.push('');
+  L.push('- `id` — kotwica bloku, w formacie `' + DOC.prefix + '-strona-blok`');
+  L.push('- `plik` — notatka źródłowa; `(generowane)` = blok powstaje w kodzie, nie w notatce');
+  L.push('- `sekcja` — nagłówki stojące nad blokiem, od najwyższego');
+  L.push('- `zakres` — czy uwaga dotyczy zaznaczonego fragmentu, czy całego bloku');
+  L.push('- `tekst` — **dokładny** fragment, którego dotyczy uwaga (linie z `>`)');
+  L.push('- `kontekst` — cały blok, żeby było widać, gdzie ten fragment siedzi');
+  L.push('- `comment` — co ma się zmienić; jeśli jest wielolinijkowy, też idzie w liniach z `>`');
+  L.push('');
+  L.push('Szukaj `tekst` w pliku z pola `plik`. Jeśli go tam nie ma dosłownie, sprawdź');
+  L.push('`druk/make_booklets.py` — kilka bloków (notki dla prowadzącego, karty, spis treści,');
+  L.push('okładka) jest składanych w kodzie, a nie w notatkach. Formatowanie (`**pogrubienia**`,');
+  L.push('`[[linki]]`) zostaje w źródle — w polu `tekst` widać już tekst po konwersji.');
+  L.push('');
+
+  var sorted = notes.slice().sort(function (a, b) {
+    return (a.page - b.page) || (a.idx - b.idx) || (a.start - b.start);
+  });
+  var live = sorted.filter(function (n) { return n.blk && !n.orphan; });
+  var rest = sorted.filter(function (n) { return !n.blk || n.orphan; });
+  var page = null;
+  live.forEach(function (n) {
+    if (n.page !== page) {
+      page = n.page;
+      L.push('## strona ' + page + ' — ' + (n.src || '(generowane)'));
+      L.push('');
+    }
+    L.push(record(n)); L.push('');
+  });
+  if (rest.length) {
+    L.push('## uwagi bez kotwicy');
+    L.push('');
+    rest.forEach(function (n) { L.push(record(n)); L.push(''); });
+  }
+  if (!notes.length) L.push('_(brak uwag)_');
+  return L.join('\n');
+}
+function stamp() {
+  var d = new Date(), p = function (x) { return (x < 10 ? '0' : '') + x; };
+  return d.getFullYear() + '-' + p(d.getMonth() + 1) + '-' + p(d.getDate()) +
+         '-' + p(d.getHours()) + p(d.getMinutes());
+}
+function download(text, name, mime) {
+  var b = new Blob([text], { type: mime + ';charset=utf-8' });
+  var u = URL.createObjectURL(b), a = document.createElement('a');
+  a.href = u; a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(function () { document.body.removeChild(a); URL.revokeObjectURL(u); }, 1500);
+}
+
+// ---------------------------------------------------------------- the panel
+function openPanel(hmtl) {
+  var p = document.getElementById('panel');
+  p.innerHTML = hmtl;
+  p.hidden = false; document.getElementById('veil').hidden = false;
+}
+function closePanel() {
+  document.getElementById('panel').hidden = true;
+  document.getElementById('veil').hidden = true;
+}
+function esc(s) {
+  return String(s).replace(/[&<>]/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c];
+  });
+}
+function showList() {
+  var sorted = notes.slice().sort(function (a, b) {
+    return (a.page - b.page) || (a.idx - b.idx) || (a.start - b.start);
+  });
+  var h = '<h3>Uwagi (' + notes.length + ')</h3>';
+  if (!sorted.length) h += '<p>Jeszcze nic tu nie ma. Zaznacz zdanie i naciśnij ＋ Uwaga.</p>';
+  sorted.forEach(function (n) {
+    h += '<div class="item"><div class="meta">' + esc(n.blk || DOC.prefix + '-OGÓLNE') +
+         ' · ' + esc(n.src || '(cała książeczka)') +
+         (n.orphan ? ' <span class="orph">· kotwica nieaktualna</span>' : '') + '</div>' +
+         (n.disp || n.quote ? '<div class="q">„' + esc((n.disp || n.quote).slice(0, 160)) +
+                    ((n.disp || n.quote).length > 160 ? '…' : '') + '"</div>' : '') +
+         '<div class="c">' + esc(n.comment) + '</div>' +
+         '<div class="row">' +
+         (n.blk ? '<button data-go="' + n.nid + '">Pokaż</button>' : '') +
+         '<button data-ed="' + n.nid + '">Edytuj</button>' +
+         '<button data-rm="' + n.nid + '">Usuń</button></div></div>';
+  });
+  h += '<div class="btns"><span class="sp"></span><button id="pclose" class="pri">Zamknij</button></div>';
+  openPanel(h);
+}
+function showMore() {
+  openPanel('<h3>Więcej</h3>' +
+    '<div class="item"><b>Kopia zapasowa</b><div class="c">Uwagi siedzą w pamięci tej' +
+    ' przeglądarki. Zgraj je, zanim wyczyścisz dane strony.</div>' +
+    '<div class="row"><button id="mjson">Pobierz .json</button>' +
+    '<button id="mload">Wczytaj .json</button></div></div>' +
+    '<div class="item"><b>Uwaga ogólna</b><div class="c">Do całej książeczki, bez' +
+    ' przypinania do bloku.</div><div class="row"><button id="mgen">Dodaj</button></div></div>' +
+    '<div class="item"><b>Wyczyść</b><div class="c">Kasuje wszystkie ' + notes.length +
+    ' uwag z tej książeczki.</div><div class="row"><button id="mclr" class="del">Wyczyść</button>' +
+    '</div></div>' +
+    '<div class="btns"><span class="sp"></span><button id="pclose" class="pri">Zamknij</button></div>');
+}
+
+function toast(msg) {
+  var t = document.getElementById('toast');
+  t.textContent = msg; t.hidden = false;
+  clearTimeout(toast._t);
+  toast._t = setTimeout(function () { t.hidden = true; }, 1600);
+}
+
+// ---------------------------------------------------------------- wiring
+document.addEventListener('selectionchange', function () {
+  var c = captureSelection(); if (c) lastSel = c;
+});
+
+var add = document.getElementById('add');
+// pointerdown, not click: tapping the toolbar collapses the selection first
+add.addEventListener('pointerdown', function () { pend = captureSelection() || lastSel; });
+add.addEventListener('click', function () {
+  if (pend) { openSheet(pend, null); return; }   // openSheet keeps the anchor in pend
+  document.body.classList.add('pick');
+});
+document.getElementById('hcancel').addEventListener('click', function (e) {
+  e.stopPropagation(); document.body.classList.remove('pick');
+});
+
+document.addEventListener('click', function (e) {
+  if (e.target.closest('#bar, #sheet, #panel, #hint')) return;
+  var mk = e.target.closest('mark.hl');
+  if (mk) {
+    var n = notes.filter(function (x) { return x.nid === mk.getAttribute('data-nid'); })[0];
+    if (n) openSheet(null, n);
+    return;
+  }
+  if (document.body.classList.contains('pick')) {
+    var blk = e.target.closest('.page > [id]');
+    if (blk) { document.body.classList.remove('pick'); openSheet(fromBlock(blk), null); }
+    return;
+  }
+  var noted = e.target.closest('.page > [data-noted]');
+  if (noted && window.getSelection().isCollapsed) {
+    var w = notes.filter(function (x) { return x.blk === noted.id && x.whole; })[0];
+    if (w) openSheet(null, w);
+  }
+});
+
+document.getElementById('ssave').addEventListener('click', saveSheet);
+document.getElementById('scancel').addEventListener('click', closeSheet);
+document.getElementById('sdel').addEventListener('click', function () {
+  if (!editing || !confirm('Usunąć tę uwagę?')) return;
+  notes = notes.filter(function (x) { return x !== editing; });
+  closeSheet(); save(); toast('Usunięto');
+});
+document.getElementById('veil').addEventListener('click', function () {
+  closeSheet(); closePanel();
+});
+document.getElementById('list').addEventListener('click', showList);
+document.getElementById('more').addEventListener('click', showMore);
+document.getElementById('copy').addEventListener('click', function () {
+  var t = buildMd();
+  try {
+    navigator.clipboard.writeText(t).then(function () { toast('Skopiowane'); },
+      function () { fallbackCopy(t); });
+  } catch (e) { fallbackCopy(t); }
+});
+function fallbackCopy(t) {
+  openPanel('<h3>Skopiuj ręcznie</h3><textarea id="raw" style="width:100%;height:46vh">' +
+            esc(t) + '</textarea>' +
+            '<div class="btns"><span class="sp"></span><button id="pclose" class="pri">Zamknij</button></div>');
+  var r = document.getElementById('raw'); r.focus(); r.setSelectionRange(0, t.length);
+}
+document.getElementById('dl').addEventListener('click', function () {
+  download(buildMd(), 'uwagi-' + DOC.key + '-' + stamp() + '.md', 'text/markdown');
+  toast('Zapisano plik .md');
+});
+
+document.getElementById('panel').addEventListener('click', function (e) {
+  var t = e.target, id;
+  if (t.id === 'pclose') { closePanel(); return; }
+  if (t.id === 'mjson') {
+    download(JSON.stringify(notes, null, 1), 'uwagi-' + DOC.key + '-' + stamp() + '.json',
+             'application/json');
+    return;
+  }
+  if (t.id === 'mload') { document.getElementById('fjson').click(); return; }
+  if (t.id === 'mgen') {
+    closePanel();
+    openSheet({ blk: '', src: '', sec: '', kind: 'ogólna', page: 9999, idx: 0,
+                whole: false, start: 0, end: 0, quote: '', ctx: '' }, null);
+    return;
+  }
+  if (t.id === 'mclr') {
+    if (!confirm('Skasować wszystkie ' + notes.length + ' uwag?')) return;
+    notes = []; closePanel(); save(); toast('Wyczyszczone');
+    return;
+  }
+  if ((id = t.getAttribute('data-go'))) {
+    var n = notes.filter(function (x) { return x.nid === id; })[0];
+    var el = n && document.getElementById(n.blk);
+    closePanel();
+    if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    return;
+  }
+  if ((id = t.getAttribute('data-ed'))) {
+    var e2 = notes.filter(function (x) { return x.nid === id; })[0];
+    closePanel(); if (e2) openSheet(null, e2);
+    return;
+  }
+  if ((id = t.getAttribute('data-rm'))) {
+    notes = notes.filter(function (x) { return x.nid !== id; });
+    save(); showList();
+  }
+});
+document.getElementById('fjson').addEventListener('change', function (e) {
+  var f = e.target.files[0]; if (!f) return;
+  var r = new FileReader();
+  r.onload = function () {
+    try {
+      var got = JSON.parse(r.result);
+      if (!Array.isArray(got)) throw 0;
+      var have = {};
+      notes.forEach(function (n) { have[n.nid] = 1; });
+      got.forEach(function (n) { if (!have[n.nid]) notes.push(n); });
+      closePanel(); save(); toast('Wczytano ' + got.length);
+    } catch (err) { alert('To nie jest plik z uwagami.'); }
+  };
+  r.readAsText(f);
+  e.target.value = '';
+});
+
+window.addEventListener('beforeunload', function (e) {
+  if (!persists && notes.length) { e.preventDefault(); e.returnValue = ''; }
+});
+
+load();
+if (!persists) document.getElementById('warn').hidden = false;
+else {
+  try { localStorage.setItem(KEY + '-probe', '1'); localStorage.removeItem(KEY + '-probe'); }
+  catch (e) { persists = false; document.getElementById('warn').hidden = false; }
+}
+render();
+})();
+</script>
+</body></html>
